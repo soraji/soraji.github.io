@@ -6,5 +6,5 @@ menu: true
 submenu: true
 order: 1
 description: >
-  ?��론트, 백엔?�� 개발?�� �??�� 기록?�� ?��깁니?��. 
+  프론트, 백엔드 개발에 관한 기록을 남깁니다.
 ---
