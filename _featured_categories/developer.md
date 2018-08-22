@@ -1,7 +1,7 @@
 ---
 layout: list
 title: Developer
-slug: developer
+slug: Developer
 menu: true
 submenu: true
 order: 1
