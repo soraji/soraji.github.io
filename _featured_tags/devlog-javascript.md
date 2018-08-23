@@ -4,6 +4,6 @@ title: JavaScript
 slug: javascript
 category: Developer
 menu: false
-order: 1
+order: 3
 header-img: "/img/js-logo.png"
 ---

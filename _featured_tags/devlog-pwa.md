@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: etc.
-slug: etc
+title: PWA
+slug: pwa
 category: Developer
 menu: false
-order: 8
+order: 7
 ---
