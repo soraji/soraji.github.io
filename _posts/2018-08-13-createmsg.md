@@ -7,7 +7,7 @@ tags: firebase
 comments: true
 ---
 
-
+[제가 편집한 깃허브](https://github.com/soraji/firebase-noti.git) 에 들어가면 코드있습니당 =)
 
 이제 진짜 재밌는 부분이 시작된다..! 여태까지는 메세지를 주고받을 수 있는 환경을 만들었다고 생각하면 되고, 이제 할것들은 실제로 메세지를 구성하고 보내는, 작업을 해볼거다..!!
 
