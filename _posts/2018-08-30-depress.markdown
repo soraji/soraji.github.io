@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[playnode 2017] 클라우드 시대의 node.js"
+title:  "그런날"
 subtitle:   ""
 categories: Essay
 comments: true
