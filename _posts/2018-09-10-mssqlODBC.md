@@ -3,7 +3,7 @@ layout: post
 title:  "ODBC를 이용한 node.js와 mssql연결"
 subtitle:   "etc"
 categories: developer
-tags: odbc, mssql
+tags: etc
 comments: true
 ---
 
