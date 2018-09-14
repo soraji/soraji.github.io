@@ -58,7 +58,8 @@
 }
 
 .markdown-body a {
-  background: #FFF9C4;
+  background: #af69ee;
+  opacity: 0.5;
 }
 
 .markdown-body code,
