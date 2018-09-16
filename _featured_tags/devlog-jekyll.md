@@ -1,9 +1,8 @@
 ---
 layout: tag-blog
-title: Jekyll
-slug: jekyll
+title: Crawler
+slug: crawler
 category: Developer
 menu: false
 order: 6
-eader-img: "/img/jekylllogo.png"
 ---
