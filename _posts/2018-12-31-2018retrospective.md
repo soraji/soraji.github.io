@@ -6,8 +6,6 @@ categories: essay
 comments: true
 ---
 
-
-
 2018년 회고.
 
 참 늦게도 한다.
