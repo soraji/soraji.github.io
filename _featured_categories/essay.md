@@ -1,7 +1,7 @@
 ---
 layout: list
 title: mind control
-slug: mind control
+slug: mind
 menu: true
 order: 2
 description: >
