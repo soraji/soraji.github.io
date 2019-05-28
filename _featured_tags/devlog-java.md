@@ -2,7 +2,7 @@
 layout: tag-blog
 title: Web
 slug: web
-category: Developer
+category: Dev
 menu: false
 order: 1
 header-img: "/img/web-logo.png"

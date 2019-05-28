@@ -2,7 +2,7 @@
 layout: tag-blog
 title: etc.
 slug: etc
-category: Developer
+category: Dev
 menu: false
 order: 8
 ---
