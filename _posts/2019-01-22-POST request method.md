@@ -1,9 +1,7 @@
 ---
 layout: post
-title:  "POST 방식"
-subtitle:   "etc"
-categories: Dev
-tags: java
+title:  "java에서 POST 방식으로 response가져오기"
+categories: java
 comments: true
 
 ---
@@ -19,7 +17,7 @@ post방식으로 불러서 그런건데 post방식으로 부르면 파라미터�
 //request값을 다 던져주면 response는 올수밖에없음. 그래서 쿠키값을 넘겨줌.
 //getUrlStrcookiechungnam은 배열이기 때문에 [0]에 담음. 
 //변수1은 리스트목록, 변수2는 상세페이지, 변수3은 엔코딩
-orghtml = UrlText.getUrlStrcookiechungnam("http://www.chungnam.net/cnnet/board.do?mnu_url=/cnbbs/view.do",weburl,"UTF-8")[0];
+orghtml = UrlText.getUrlStrcookiechungnam("타겟 URL",weburl,"UTF-8")[0];
 ~~~
 
 ~~~
