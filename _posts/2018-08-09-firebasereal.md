@@ -2,7 +2,7 @@
 layout: post
 title:  "PWA 푸시 알람 firebase 실전실습 [3편]"
 subtitle:   "firebase"
-categories: Developer
+categories: Dev
 tags: firebase
 comments: true
 ---

@@ -1,10 +1,10 @@
 ---
 layout: list
-title: Procurement
-slug: Procurement
+title: 전자입찰
+slug: 전자입찰
 menu: true
 submenu: false
 order: 6
 description: >
-  전자입찰에 관한 글을 씁니다.
+  입찰은 어렵다
 ---

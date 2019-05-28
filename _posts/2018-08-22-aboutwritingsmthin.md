@@ -2,7 +2,7 @@
 layout: post
 title:  "무언가 적어서 남긴다는것은"
 subtitle:   ""
-categories: essay
+categories: mind control
 comments: true
 ---
 

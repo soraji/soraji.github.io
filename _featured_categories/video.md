@@ -6,5 +6,5 @@ menu: true
 submenu: false
 order: 5
 description: >
-  영상을 남깁니다.
+  영상은 재밌지만 창피하다
 ---
