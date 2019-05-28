@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
-title: Web
-slug: web
+title: FrontEnd
+slug: front
 category: Dev
 menu: false
 order: 1

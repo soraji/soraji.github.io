@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
-title: Web
-slug: web
+title: Java
+slug: java
 category: Dev
 menu: false
 order: 1
