@@ -2,7 +2,7 @@
 layout: post
 title:  "2018년 회고"
 subtitle:   ""
-categories: mind control
+categories: mind
 comments: true
 ---
 
