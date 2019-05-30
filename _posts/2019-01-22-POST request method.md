@@ -6,8 +6,6 @@ comments: true
 
 ---
 
-# POST request method
-
 리스트 소스는 불러오는데 상세페이지를 불러오지 않음
 
 post방식으로 불러서 그런건데 post방식으로 부르면 파라미터랑 쿠키를 보내주는 방식으로 보내주면 됨

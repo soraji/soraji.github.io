@@ -1,15 +1,9 @@
 ---
 layout: post
-title:  "주피터노트북 사용법"
+title:  "[python jupyter notebook]주피터노트북 사용법"
 categories: python
 comments: true
 ---
-
-# jupyter notebook 사용법
-
-
-
-
 
 Mode
 

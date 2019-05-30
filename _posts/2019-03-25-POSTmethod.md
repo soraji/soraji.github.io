@@ -7,9 +7,7 @@ comments: true
 
 ---
 
-# POST METHOD
 
----
 
 ~~~
 //파라미터를 제외한 타겟url

@@ -1,12 +1,10 @@
 ---
 layout: post
-title:  "파이썬 오프셋 인덱스"
+title:  "[python offset index]파이썬 오프셋 인덱스"
 categories: python
 comments: true
 
 ---
-
-# offset index
 
 ~~~
 data 변수를 선언하여 문자열 오프셋을 이용하여 (data = "0123456789") 짝수만 거꾸로 출력되도록 코드를 작성하세요.(86420)

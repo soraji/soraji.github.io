@@ -7,8 +7,6 @@ comments: true
 
 ---
 
-# CSS Selector
-
 크롤링을 하다보면 css셀렉터가 아주 유용하게 쓰인다. 이때, 클래스앞에는 . ,아이디앞에는 #을 붙이는데 그 사이에 space가 들어가있다면?
 
 예를들어 .class1.class2와 .class1 .class2는 다르다. 중간에 space를 가지고있기 때문이다.

@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "java에서 html소스 불러오기"
+title:  "[java]java에서 html소스 불러오기"
 categories: java
 comments: true
 
 
 ---
 
-# HTML 소스 불러오기
+java에서 HTML 소스 불러오기
 
 ~~~java
 String urlPath = "http://www.example.com";

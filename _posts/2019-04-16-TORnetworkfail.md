@@ -8,10 +8,6 @@ comments: true
 
 ---
 
-# TOR failed to establish a TOR network connection
-
-
-
 TOR를 설치하고 처음으로 connect를 시키려고 버튼을 눌렀는데 tor failed to establish a tor network connection(clock ----)이라는 오류가 뜨길래 뭔가 하고 찾아봤더니 토르는 정확한 시간을 설정하는게 매우 중요한가보다.
 
 그래서 시간대를 정확하게 설정해주는게 중요하다.

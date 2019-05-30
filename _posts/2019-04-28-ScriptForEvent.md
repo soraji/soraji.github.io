@@ -7,7 +7,7 @@ comments: true
 
 ---
 
-# <Script LANGUAGE = javascript FOR=MiPlatform Event = " FormSize()">
+<Script LANGUAGE = javascript FOR=MiPlatform Event = " FormSize()"> 는
 
 
 
