@@ -13,6 +13,10 @@ comments: true
 
 이런 에코시스템을 활용함으로서 하둡의 생산성을 높일수 있기 때문에 하둡은 하둡을 중심으로 하는 많은 에코시스템을 가지고 있습니다. 아래의 사진은 하둡에코시스템을 그려놓은 그림이라고 할 수 있겠네요=)
 
+
+
+아래글은 [udemy 하둡강좌](<https://www.udemy.com/the-ultimate-hands-on-hadoop-tame-your-big-data/>)를 수강하면서 복습+번역 한 글입니다.
+
 ![hadoopEcosystem](/assets/img/hadoopEcosystem.jpg)
 
 - HDFS : HDFS는 클러스터(여러 대의 컴퓨터들이 연결되어 하나의 시스템처럼 동작하는 컴퓨터들의 집합)를 오가는 빅데이터를 보관소에 분배함으로서, 내 클러스터에 있는 모든 하드 드라이브를 거대한 하나의 파일 시스템으로 보여줍니다.
