@@ -1,4 +1,11 @@
-# Core Hadoop Ecosystem
+---
+layout: post
+title:  "[Hadoop] 하둡이란 무엇인가? 하둡체계의 핵심(Core Hadoop Ecosystem)"
+categories: back
+comments: true
+
+
+---
 
 ![hadoopEcosystem](/assets/img/hadoopEcosystem.jpg)
 
