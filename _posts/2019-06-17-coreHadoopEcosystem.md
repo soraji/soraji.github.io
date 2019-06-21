@@ -19,7 +19,7 @@ comments: true
 
 ![hadoopEcosystem](/assets/img/hadoopEcosystem.jpg)
 
-- HDFS : HDFS는 클러스터(여러 대의 컴퓨터들이 연결되어 하나의 시스템처럼 동작하는 컴퓨터들의 집합)를 오가는 빅데이터를 보관소에 분배함으로서, 내 클러스터에 있는 모든 하드 드라이브를 거대한 하나의 파일 시스템으로 보여줍니다.
+- HDFS : HDFS는 클러스터(여러 대의 컴퓨터들이 연결되어 하나의 시스템처럼 동작하는 컴퓨터들의 집합)를 오가는 빅데이터를 보관소에 분배함으로써, 내 클러스터에 있는 모든 하드 드라이브를 거대한 하나의 파일 시스템으로 보여줍니다.
 
   이 뿐만 아니라 HDFS는 많은 양의 데이터의 복사본을 만들어서 파일을 유지할 수 있도록 도와줍니다.
 
@@ -33,7 +33,11 @@ comments: true
 
   
 
-- MapReduce :  and one of then is map reduce which again is a piece of Hadoop proper and map reduce at a very high level is just a programming metaphor or programming model that allows you to process your data across an entire cluster. it consists of mappers and reducers. These are both different scripts that you might write of different functions if you will when you're writing a map reduce program. Mappers have the ability to transform your data in parallel across your entire computing cluster in a very efficient manner. And reducers are what aggregate that data together and it may sound like a very simple model and it it, but it's actually very versatile and we'll see later on that there are some very creative ways you can put mappers and reducers together to solve very complex problems. Now originally map reduce and YARN were kind of the same thing in Hadoop. They got split out recently and that's enabled other applications to be built on top of yarn that solve the same problem as map reduce but in a more efficient manner. 
+- MapReduce :  Mappers have the ability to transform your data in parallel across your entire computing cluster in a very efficient manner. And reducers are what aggregate that data together and it may sound like a very simple model and it it, but it's actually very versatile and we'll see later on that there are some very creative ways you can put mappers and reducers together to solve very complex problems. Now originally map reduce and YARN were kind of the same thing in Hadoop. They got split out recently and that's enabled other applications to be built on top of yarn that solve the same problem as map reduce but in a more efficient manner. 
+
+  YARN위에 쌓을 수 있는 흥미로운 어플리케이션등 중 하나는 map reduce인데요, 이것은 mappers와 reducers로 구성되어있습니다. 이 둘은 당신이 map reduce프로그램을 사용할때 다른 functions를 작성할 수 있는 다른 스크립트입니다.
+
+  Mappers는 굉장히 효율적인 방법으로 전체 컴퓨터 클러스터에서 데이터를 동일방향으로 변형할 수 있는 능력을 가지고 있고, Reducers는 모아진 데이터를 집합한 것인데, 이것들은 들리기에는 매우 간단한 모델이라고 생각 될 수 있습니다. 하지만 사실 이것은 매우 다방면으로 이루어져있고, 나중에 다루겠지만 이 mappers와 reducers를 모두 사용하여 창의적인 방법으로 매우 복잡한 문제들을 해결할 수 있습니다. 현재 map reduce와 YARN은 hadoop내에서 거의 동일한것으로 치부되어집니다. 이 두가지는 최근에 분리되었고, 이 둘이 분리됨에 따라 다른 어플리케이션들이 map reduce와 같은 문제들을 더욱 효과적인 방법으로 해결하며 yarn위에 지어질 수 있게 되었습니다.
 
 - Pig : If you dont' want to write Java or oython map reduce code and you're more familiar with a scripting language that has sort of a SQL style syntax, Pig is for you so Pig is a very high level programming API that allows you to write simple scripts that look a lot like SQL in some cases that allow you to chain together queries and get complex answers but without actually writing Python or Java code in the process, so pig will actually transform that script into something that will run on map reduce which in turn goes through yarn and HDFS to actually process and get the data that it needs to get the answer you want. That's pig. Just a high level scripting language that sits on top of map reduce.
 
