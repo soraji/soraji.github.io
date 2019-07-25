@@ -116,10 +116,10 @@ blockquote {
 
 .read-more {
   @extend .faded;
-  margin-top: 2rem;
+  margin-top: 0;
   float: right;
 
   &::after {
-    content: " \2192"; // â†’
+    content: " \2192"; // ?†’
   }
 }
