@@ -18,7 +18,7 @@ tagline:             배우는걸 좋아하는 개발자
 # A short description of the page, used in the sidebar and as fallback for the meta description tag.
 # Markdown enabled, but don't use more than one paragraph (enforced by `>`)
 description:         >
-  그냥 만드는걸 좋아하는 개발자. 정보수집을 주로 합니다.
+  민드는걸 좋아해요. 정보수집을 주로합니다
 
 # This should be the same author as first entry in `_data/authors.yml`
 author:
@@ -50,7 +50,7 @@ google_analytics:    #UA-92346434-1
 disqus_shortname:    https-soraji-github-io-1
 
 # This text will appear in the footer of every page. Markdown enabled.
-copyright:           '&copy; 2017. by sora'
+copyright:           '&copy; 2018. by sora'
 
 # Format of the permalinks
 permalink:           pretty

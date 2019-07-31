@@ -6,7 +6,7 @@ categories: mind
 comments: true
 ---
 
-
+ 
 
 
 
