@@ -139,228 +139,98 @@ asp로 가져오긴 했지만 최대한 asp를 안쓰고 js로 만들어보려�
 
 
 
-### calendar.asp (아 코드가 그림이랑 좀 다를수있음.. 소스는 예전에 갖다놓은거고 그림은 완성본이라..)
+calendar.asp가 로딩되면 script가 실행되면서 callingajax.asp를 호출한다.
+
+그 callingajax에서 db내용을 json으로 바꿔주고 그 바꿔진 json데이터를 ajax success안으로 가져오는것임.
+
+### calendar.asp 
 
 ```asp
+<body topmargin="10" leftmargin="15" onload="fetchJson()">    
+```
+
+### calendar.asp의 script
+
+~~~javascript
+function fetchJson() {
+    var k = 0;
+    var allData = { "k": k };		
+
+    $.ajax({
+        type : 'POST',
+        url : 'callingajax.asp',
+        data: allData,
+        dataType : 'json',
+
+        success : function(result){
+            console.log(result.datalist);
+            for(i=1; i<result.datalist.length; i++){
+                
+                gubun = result.datalist[i].gubun;
+                subject = result.datalist[i].subject;
+                contents = result.datalist[i].contents;
+                date1 = result.datalist[i].date1;
+                thisyear = result.datalist[i].thisyear;
+                ryn = result.datalist[i].ryn;
+                url = result.datalist[i].url;
+
+                console.log('subject'+subject);
+            }
+        },
+        error : function(){
+            alert('failed to fetch json data!');
+        }
+    });
+}
+~~~
+
+
+
+### callingajax.asp
+
+~~~asp
+<%
+Response.CharSet="euc-kr"
+Session.codepage="949"
+Response.codepage="949"
+Response.ContentType="text/html;charset=euc-kr"
+%>
 <%
 Response.LCID = 1046 
 %>
 <!--#includes file="../../include/dbconnect.asp"-->
 
-<!--#includes file="JSON.asp" --> 
-<!--#includes file="json.objectClass.asp"-->
-<!--#includes file="aspJSON.asp" -->
-
-<%   
-
-    yearbox = request("yearbox")	'셀렉트박스에서 연도 받아옴
-
-
-    Set List = Server.CreateObject("ADODB.Recordset")
-    sqlview = "select * from calendar order by date1"
-
-    List.Open sqlview, dbCon, 1
-    ListCount = List.RecordCount 
-
-    Set caljson = new JSON  'JSON.asp가 필요함
-    Set rs = dbCon.Execute(sqlview)
-
-    Dim List_jsonString
-    List_jsonString = caljson.toJSON("datalist", rs, false)
-
-    Dim jsonObj, outputObj
-    set jsonObj = new JSONobject
-    set outputObj = jsonObj.parse(List_jsonString)  'json.objectClass.asp가 필요함(파싱하려면)
+<!--#includes file="include/JSON.asp" --> 
+<!--#includes file="include/json.objectClass.asp"-->
+<!--#includes file="include/aspJSON.asp" -->
+<%
+cust_id = Session("cust_id")
+admin_id = Session("admin_id")
 
 
-    Set oJSON = New aspJSON     'aspJSON.asp 필요함(for문)
-    oJSON.loadJSON(List_jsonString)
+Set List = Server.CreateObject("ADODB.Recordset")
+sqlview = "select * from calendar order by date1"
 
-    For Each result In oJSON.data("datalist")
+List.Open sqlview, dbCon, 1
+ListCount = List.RecordCount 
 
-        Set this = oJSON.data("datalist").item(result)
+Set caljson = new JSON  'JSON.asp가 필요함
+Set rs = dbCon.Execute(sqlview)
 
-        gubun = this.item("gubun")	'gubun이라는 컬럼 가져오기
-        subject = this.item("subject")	'subject라는 컬럼 가져오기
-        contents = this.item("contents")
-        date1 = this.item("date1")
-        thisyear = this.item("year")
-        ryn = this.item("ryn")
-        url = this.item("url")
+Dim List_jsonString
+List_jsonString = caljson.toJSON("datalist", rs, false)
 
-        response.write "date1: " & subject & date1 & "<br />"
-
-        param = split(date1,"-")    'id값 월+일로 split
-        for i = 0 to ubound(param)
-            str = param(1) + param(2)
+Dim jsonObj, outputObj
+set jsonObj = new JSONobject
+set outputObj = jsonObj.parse(List_jsonString)  'json.objectClass.asp가 필요함(파싱하려면)
 
 
-            for m = 1 to 12     '12개월 for
-                if m < 10 then
-                    m = "0" & m
-                end if
+Set oJSON = New aspJSON     'aspJSON.asp 필요함(for문)
+oJSON.loadJSON(List_jsonString)
 
-                for d = 1 to 31     '31일 for
-
-                    if thisyear = year(date) then
-                        if d < 10 then
-                            d = "0" & d
-                        end if
-
-                        the_date = thisyear & "-" & m & "-" & d
-                        'response.write "날짜는 " & the_date
-
-                    end if
-                next
-            next
-        next
-    next
-
-    Set rs = Nothing
-    Set caljson = Nothing
+Response.write List_jsonString
 %>
-<html>
-<head>
-<title>1년일정</title>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
-<link rel="stylesheet" href="/include/tablebord.css">
-<script src="/include/jquery-2.1.1.min.js"></script>
-<script src="/include/jquery-ui.min.js"></script>
-<script src="/include/ajax.js"></script>
-<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
-
-<link rel="stylesheet" href="bttn.min.css">
-<script src="calendar.js"></script>
-<script>
-function add_note(month,day,nn){
-    f1 =  document.form1;
-
-    var date = new Date();
-    var year  = date.getFullYear();
-    if (nn==1) {
-        $('#'+month+day).css({"background":"url(img/plus.svg)"}).css({"background-repeat":"no-repeat"}).css({"background-size":"10px"}).css({"background-position":"right"}).css({"cursor":"pointer"});
-        $('')
-        // document.getElementById(month+day).innerHTML="<img src='img/plus.svg' width='10px' height='10px' style='fill:1ABC9C; color:1ABC9C;'></img>";
-        $('#'+month+day).click(function(){
-            addContent(year,month,day);
-});
-    }
-    else if (nn==2) {
-        $('#'+month+day).css({"background":""});
-    }
-} 
-
-function mark_cal(str,ryn){
-    console.log("str"+str);
-
-    if(ryn == 1){
-        document.getElementById(str).innerHTML="<div style='background-color: #149725; width:10px; height:10px;'></div>";
-    }else{
-        document.getElementById(str).innerHTML="<div style='background-color: #F9E79F; width:10px; height:10px;'></div>";
-    }
-}
-</script>
-</head>
-<body topmargin="10" leftmargin="15" onload="mark_cal('<%=str%>',<%=ryn%>)">
-    <form action="addcontent_process.asp" method="POST"  name="form1" enctype="multipart/form-data">
-        <table width="975" border="0" margin="0" padding="0" >          
-            <tr>
-                <td>
-                    <select name="yearbox" id="yearbox">
-                        <option value="2019" <%if yearbox = "2019" then%>selected<%end if%> >2019 년</option>
-                        <option value="2020" <%if yearbox = "2020" then%>selected<%end if%> >2020 년</option>
-                        <option value="2021" <%if yearbox = "2021" then%>selected<%end if%> >2021 년</option>
-                        <option value="2022" <%if yearbox = "2022" then%>selected<%end if%> >2022 년</option>
-                        <option value="2023" <%if yearbox = "2023" then%>selected<%end if%> >2023 년</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-            </tr>
-            <tr>
-                <td>
-                    <table width="975" border="0" margin="0" padding="0" style="table-layout: fixed;" class="tableclass">
-                         <tr>
-                            <td withd="75"></td>
-                            <% for s=1 to 12%>
-                            <td withd="75" align="center"><%=s%>월</%=s%>
-                            <input type="hidden" name="month" value="<%=s%>">
-                            <%next%>
-                        </tr>
-<%
-if ListCount = 0 then
-%>
-<%
-else
-for a=1 to 31
-    if a < 10 then
-        a = "0" & a
-    end if
-%>                      
-                        
-                        <tr>
-                            <td withd="75"><%=a%>일</td>
-                            <td withd="75" onMouseOver="add_note('01','<%=a%>',1)" onMouseOut="add_note('01','<%=a%>',2)" id="01<%=a%>" ><%=status%></td>
-                            <td withd="75" onMouseOver="add_note('02','<%=a%>',1)" onMouseOut="add_note('02','<%=a%>',2)" id="02<%=a%>" ><%=status%></td>
-                            <td withd="75" onMouseOver="add_note('03','<%=a%>',1)" onMouseOut="add_note('03','<%=a%>',2)" id="03<%=a%>" ><%=status%></td>
-                            <td withd="75" onMouseOver="add_note('04','<%=a%>',1)" onMouseOut="add_note('04','<%=a%>',2)" id="04<%=a%>" ><%=status%></td>
-                            <td withd="75" onMouseOver="add_note('05','<%=a%>',1)" onMouseOut="add_note('05','<%=a%>',2)" id="05<%=a%>" ><%=status%></td>
-                            <td withd="75" onMouseOver="add_note('06','<%=a%>',1)" onMouseOut="add_note('06','<%=a%>',2)" id="06<%=a%>" ><%=status%></td>
-                            <td withd="75" onMouseOver="add_note('07','<%=a%>',1)" onMouseOut="add_note('07','<%=a%>',2)" id="07<%=a%>" ><%=status%></td>
-                            <td withd="75" onMouseOver="add_note('08','<%=a%>',1)" onMouseOut="add_note('08','<%=a%>',2)" id="08<%=a%>" ><%=status%></td>
-                            <td withd="75" onMouseOver="add_note('09','<%=a%>',1)" onMouseOut="add_note('09','<%=a%>',2)" id="09<%=a%>" ><%=status%></td>
-                            <td withd="75" onMouseOver="add_note('10','<%=a%>',1)" onMouseOut="add_note('10','<%=a%>',2)" id="10<%=a%>" ><%=status%></td>
-                            <td withd="75" onMouseOver="add_note('11','<%=a%>',1)" onMouseOut="add_note('11','<%=a%>',2)" id="11<%=a%>" ><%=status%></td>
-                            <td withd="75" onMouseOver="add_note('12','<%=a%>',1)" onMouseOut="add_note('12','<%=a%>',2)" id="12<%=a%>" ><%=status%></td>
-                        </tr>
-                        <div style="position: relative; top: 800px; " width="0" height="0">                               
-                            <p id ="popup" name="popup"></p>
-                        </div>
-                        
-<%
-next
-end if
-%>                        
-
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td hight="20"></td>
-            </tr>
-            <tr>
-                <td colspan="13">
-                    <table width="975" border="0" margin="0" padding="0" >
-                        <tr>
-                            <td width="15"><div style='background-color: #149725; width:10px; height:10px;'></div></td>
-                            <td width="960"> : 정기일정</td>
-                        </tr>
-                        <tr>
-                            <td width="15"><div style='background-color: #F9E79F; width:10px; height:10px;'></div></td>
-                            <td width="960"> : 비정기일정</td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-    </form>
-</body>
-</html>
-
-
-<%
-    dbCon.close
-    set dbCon = nothing
-%>
-```
-
-
-
-
-
-
+~~~
 
 
 
