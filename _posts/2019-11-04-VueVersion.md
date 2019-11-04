@@ -1,69 +1,59 @@
 ---
 layout: post
-title:  "[Vue.js] Vue를 시작해보자"
+title:  "[Vue.js] Vue Version 비교 (cli2 vs cli3)"
 categories: front 
 comments: true
 ---
 
 
-# npm 으로 vue 시작하기
+# vue cli 버전비교
 
-```
-node -v
-npm -v
-```
+## CLI 2.x VS CLI 3.x
 
-으로 노드와 npm이 잘 설치되었는지 확인하고, 
+cli 3을 사용하려면 
 
-터미널에서
-
-```
-npm i vue
+```vue
+npm install -g @vue/cli
 ```
 
-```
-npm i vue-cli
-```
+설치해주어야한다.
 
-로 vue를 설치해준다.
-
-
-
-그리고 진행할 프로젝트를 생성한다.
-
-vue cli3을 연습해보고싶었으므로(2도 제대로 못하면서...)
-
-폴더를 생성하고 cd 한뒤 
+만약 다시 2로 돌아가려면 
 
 ```
-vue create vue-project
+npm install -g vue/cli
 ```
 
-를 실행하니
-
-```
-Vue CLI v3.11.0
-? Please pick a preset: (Use arrow keys)
-> default (babel, eslint)
-  Manually select features
-```
-
-라면서 물어본다. vue cli 3인것을 확인할수있다
+로 다시 설치해 주어야함
 
 
 
-디폴트를 선택해서 프로젝트를 생성하면 프로젝트명으로 된 폴더가 생겨난다.
 
-그 뒤로
 
-```
-cd vue-project
-```
+-명령어
 
-로 디렉토리 옮겨주고 거기서
+- 2 : vue init '프로젝트 템플릿 이름' '파일위치'
+- 3 : vue create '프로젝트 이름'
 
-```
-npm run serve
-```
+-웹팩 설정 파일
 
-해주면 로컬이 실행된다.
+- 2 : 노출O
+- 3 : 노출 X
+
+-프로젝트 구성
+
+- 2: 깃헙의 템플릿 다운로드 
+  https://github.com/vuejs-templates/webpack-simple/tree/master/template 에 있는 템플릿을 다운받음
+- 3 : 플러그인 기반으로 기능추가
+  원하는 플러그인만 설치가능. 프로젝트 중간에도 추가할 수 있다.
+
+-ES6 이해도
+
+- 2 : 필요 X
+- 3 : 필요 O
+
+-node modules
+
+- 2 : 자동설치 안됨. npm i 필요
+- 3 : 자동설치
+
