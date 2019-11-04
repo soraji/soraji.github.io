@@ -14,7 +14,7 @@
       {% include tag-list.html tags=post.tags meta=site.featured_tags start_with="on " separator=", " %}
     </p>
 
-    {% include message.html text=post.description %}
+    <!-- {% include message.html text=post.description %} -->
   </header>
   <!-- {% for tag_slug in post.tags %}
     {% unless tag.header-img %}
@@ -59,8 +59,8 @@
 
     </script>
   {% else %}
-    {{ post.excerpt }}
-    <p class="read-more"><a class="heading" href="{{ post.url | relative_url }}" data-flip="title">Continue reading </a></p>
+    <!-- {{ post.excerpt }}
+    <p class="read-more"><a class="heading" href="{{ post.url | relative_url }}" data-flip="title">Continue reading </a></p> -->
   {% endunless %}
 
 </article>
