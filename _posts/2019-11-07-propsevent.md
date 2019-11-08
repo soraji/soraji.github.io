@@ -26,7 +26,7 @@ comments: true
 
 
 
-for문에서의 konggos는 vuex, store폴더에 있고
+for문에서의 cats는 vuex, store폴더에 있고
 
 detail이라는 이름의 하위컴포넌트를 등록해준다.
 
