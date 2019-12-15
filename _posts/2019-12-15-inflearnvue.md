@@ -75,3 +75,9 @@ comments: true
 특히 실무에 바로 들어가서 해야하는건
 
 [vue.js완벽가이드](https://www.inflearn.com/course/vue-js/dashboard) 이거 정말 추천…. 난 이거만 10번들은듯
+
+
+
+
+
+아 이걸 듣고 오프라인을 들으러갔으면 진짜 완전 대박이었을텐데… 순서가 좀 뒤바뀌어서 아쉽다 ㅠ 좀더 실력 쌓고 갈걸 ㅠㅠ
