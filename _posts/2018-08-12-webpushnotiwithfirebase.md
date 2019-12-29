@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "firebase를 이용한 푸시알림 [3편] - 파이어베이스를 이용한 웹 푸시알림"
-subtitle:   "web"
-categories: web
+subtitle:   "firebase"
+categories: Developer
+tags: firebase
 comments: true
 ---
 

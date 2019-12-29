@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "firebase를 이용한 푸시알림 [5_2편] - 메세지 보내기"
-subtitle:   "web"
-categories: web
+subtitle:   "firebase"
+categories: Developer
+tags: firebase
 comments: true
 ---
 

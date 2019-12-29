@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "firebase를 이용한 푸시알림 [2편] - 파이어베이스 Authentication(인증)"
-subtitle:   "web"
-categories: web
+subtitle:   "firebase"
+categories: Developer
+tags: firebase
 comments: true
 ---
 
