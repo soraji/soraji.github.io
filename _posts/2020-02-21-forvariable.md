@@ -11,10 +11,6 @@ comments: true
 
 
 
-~~~
-
-~~~
-
 참 이거는 뭐라고 설명하기가 되게 어렵다.
 
 노출이 절대안될... 내용인데(왜냐면 설명을 못하겠음!!!)
@@ -72,7 +68,7 @@ MDN에 보면 '속성 접근자(Bracket notation)' 라고 불리는데, `.`을 �
 ```vue
 <div v-for="item in items" :key="item.id">
   <div v-for="n in 10" :key="n">
-    <div>{{item['file'+n]}}</div>
+    <div>{{ item [ 'file' + n ] }}</div>
   </div>
 </div>
 ```
@@ -85,7 +81,7 @@ MDN에 보면 '속성 접근자(Bracket notation)' 라고 불리는데, `.`을 �
 
 아니 근데 왜 근데 글이 딱 그 코드만 안올라가지......;;;;;;;;;;;;;;;;;;뭐지;;;;;;;;;;;;;;
 
-`{{item['file'+n]}}` 이렇게 쓰면된다.
+`{{ item [ 'file' + n ] }}` 이렇게 쓰면된다.
 
 
 
