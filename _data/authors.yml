@@ -8,7 +8,7 @@ soraji:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    배우고 만드는걸 좋아합니다
+    정보수집을 주로 합니다.
 
   # This photo will be used in the about section
   picture:
