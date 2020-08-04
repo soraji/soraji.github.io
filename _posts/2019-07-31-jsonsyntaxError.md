@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[javaScript] Uncaught SyntaxError: Unexpected token o"
+title:  "[JS] Uncaught SyntaxError: Unexpected token o"
 categories: front 
 comments: true
 
