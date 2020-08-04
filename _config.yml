@@ -18,7 +18,7 @@ tagline:             배우는걸 좋아하는 개발자
 # A short description of the page, used in the sidebar and as fallback for the meta description tag.
 # Markdown enabled, but don't use more than one paragraph (enforced by `>`)
 description:         >
-  민드는걸 좋아해요. 정보수집을 주로합니다
+  민드는걸 좋아해요. 크롤링(java)과 웹개발(vue)을 주로합니다 °˖✧◝(⁰▿⁰)◜✧˖°
 
 # This should be the same author as first entry in `_data/authors.yml`
 author:
