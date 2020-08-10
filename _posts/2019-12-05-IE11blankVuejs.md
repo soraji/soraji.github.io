@@ -8,6 +8,16 @@ comments: true
 
 
 
+혹시나 다른이유때문에 안나오는것같으면 뒤의 2,3편도 참고해주세요
+
+[Vue를 적용하니 IE11에서 하얀화면(blank)으로 나올때 2편](https://soraji.github.io/front/2020/06/25/vueIEBlank2/)
+
+[Vue를 적용하니 IE11에서 하얀화면(blank)으로 나올때 3편](https://soraji.github.io/front/2020/08/07/IEblank3/)
+
+
+
+
+
 
 
 vue로 실컷 작업한뒤, chrome에서 신나게 작업을 하고 있는데,
@@ -169,3 +179,11 @@ can't get Vue working in IE 11.. blank ie 11 vue... 정말 20개 넘는 글을 �
 기본기가 부족하니 문제해결만 하기 급급해서 작동원리가 정확하게 뭔지를 모르겠다.
 
 빌드과정과 크로스브라우저에 대해서 잘 인지하려면 바벨과 웹팩을 공부해야할것 같다.
+
+
+
+
+
+
+
+혹시나 도움이 되셨다면 광고한번만 클릭을...(〃'∇'〃)ゝ헤헤
