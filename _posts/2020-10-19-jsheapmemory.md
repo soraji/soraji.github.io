@@ -45,7 +45,7 @@ FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaS
 15: 000002279FB5C5C1
 npm ERR! code ELIFECYCLE
 npm ERR! errno 134
-npm ERR! vue-bidpro-floor@0.1.0 build: `vue-cli-service build`
+npm ERR! vue-project@0.1.0 build: `vue-cli-service build`
 npm ERR! Exit status 134
 npm ERR!
 npm ERR! Failed at the vue-bidpro-floor@0.1.0 build script.
