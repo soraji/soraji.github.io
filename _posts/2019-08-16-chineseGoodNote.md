@@ -42,9 +42,7 @@ example))
 
 
 
-원하면 그냥 다운받아도됨..ㅎ_ㅎ
+개인사정으로 잠깐 닫아놓아요!
 
-[[ 다운로드 ▽ ]]
 
-https://drive.google.com/file/d/1DYW8jqPEgejXRyTttFZ-7penN3nYrUQG/view?usp=sharing
 
