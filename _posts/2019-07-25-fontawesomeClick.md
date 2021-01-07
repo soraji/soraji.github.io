@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[JS] fontawesome icon 클릭 이벤트시 아이콘 변경"
-categories: front
+categories: js
 comments: true
 
 ---

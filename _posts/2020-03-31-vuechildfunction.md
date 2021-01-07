@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Vue.js] Vue ref | ref로 vue child component의 function 컨트롤하기(뷰 자식컴포넌트 함수 실행하기)"
-categories: front 
+categories: vue 
 comments: true
 ---
 

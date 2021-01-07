@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Vue.js] Vue Version 비교 (cli2 vs cli3)"
-categories: front 
+categories: vue 
 comments: true
 ---
 

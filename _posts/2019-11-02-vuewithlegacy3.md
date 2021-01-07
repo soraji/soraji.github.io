@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Vue.js] #3.레거시 위에 vue.js 올리기(레거시에서 window.open을 했을때 vue 빌드 부르기)"
-categories: front 
+categories: vue 
 comments: true
 
 ---

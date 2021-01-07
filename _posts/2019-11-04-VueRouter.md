@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Vue.js] Vue Router(뷰 라우터)에 대해 알아보자"
-categories: front 
+categories: vue 
 comments: true
 ---
 

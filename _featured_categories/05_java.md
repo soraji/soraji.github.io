@@ -3,7 +3,7 @@ layout: list
 title: Java
 slug: java
 menu: true
-order: 1
+order: 5
 description: >
-  자바에 관한 나의 삽질일기.
+  Java에 관한 나의 삽질일기.
 ---

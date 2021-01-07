@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Vue.js] for문에서 child 자식컴포넌트에 파라미터 던지기"
-categories: front 
+categories: vue 
 comments: true
 
 

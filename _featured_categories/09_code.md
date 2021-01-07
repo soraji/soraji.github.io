@@ -3,7 +3,7 @@ layout: list
 title: Code
 slug: code
 menu: true
-order: 1
+order: 9
 description: >
-  알고리즘 훈련을 합니다
+  알고리즘 훈련
 ---

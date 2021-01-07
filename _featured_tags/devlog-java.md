@@ -4,6 +4,6 @@ title: Java
 slug: java
 category: Dev
 menu: false
-order: 1
+order: 4
 header-img: "/img/web-logo.png"
 ---

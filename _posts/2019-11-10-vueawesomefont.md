@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Vue.js] vue에서 Font Awesome 사용하기"
-categories: front 
+categories: vue 
 comments: true
 
 

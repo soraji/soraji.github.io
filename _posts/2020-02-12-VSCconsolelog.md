@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "vscode console.log 단축키 추가하기"
-categories: front 
+categories: js 
 comments: true
 ---
 

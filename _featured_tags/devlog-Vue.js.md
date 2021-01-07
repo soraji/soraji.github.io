@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
-title: FrontEnd
-slug: front
+title: Vue.js
+slug: vue
 category: Dev
 menu: false
 order: 1

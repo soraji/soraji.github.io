@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Vue.js] Vue 자식컴포넌트를 부모컴포넌트 위로 올리기(레이어처럼)"
-categories: front 
+categories: vue 
 comments: true
 ---
 

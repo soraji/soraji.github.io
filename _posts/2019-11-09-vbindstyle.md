@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Vue.js] v-bind:style (스타일, 변수 바인딩해주기)"
-categories: front 
+categories: vue 
 comments: true
 ---
 
