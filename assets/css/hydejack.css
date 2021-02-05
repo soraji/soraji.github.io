@@ -2,7 +2,7 @@
 ---
 {% capture include_to_scssify %}{% include styles/style.scss %}{% endcapture %}
 {% include copyright-header.txt %}{{ include_to_scssify | scssify }}
-
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
 @media(max-width: 700px) {
 .markdown-body {
   -ms-text-size-adjust: 100%;
@@ -29,6 +29,7 @@
 .markdown-body {
     word-spacing: 1.8px;
     letter-spacing: 0.1px;
+    font-family: 'Nanum Myeongjo', serif;
 }
 
 @media(min-width: 700px) {
