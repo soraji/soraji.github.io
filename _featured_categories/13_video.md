@@ -1,10 +1,10 @@
 ---
 layout: list
-title: Video
+title: 취미부자의 HOBBY
 slug: video
 menu: true
 submenu: false
 order: 13
 description: >
-  영상은 재밌지만 창피하다
+  본캐와 부캐사이 그 어딘가
 ---
