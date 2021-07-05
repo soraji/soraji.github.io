@@ -146,12 +146,27 @@ vue cli3 으로 프로젝트로 만들때 디폴트로 만들게 되면 따로 .
 
 vue.config.js에는
 
-```
+---
+
+*2021-07-05 내용추가합니다*
+
+*아래코드중 transpileDependencies: [ansiRegex] 이라고 되어있는 부분은 node_modules에 혹시 수정한게 있는 분들만 적어주시고, 아니라면 주석처리해주세요*
+
+*기효님이랑 얘기하다가 알게됐는데 제 코드를 그냥 복사해서 가져가셨다가 규모가 엄청 커진경우가 있다고 하셔서ㅋㅋㅋㅋㅋ*
+
+*저는 node_modules에서 수정해야할 코드가 있어서 직접 수정을 했는데,*
+
+*transpileDependencies: [ansiRegex] 이 코드는 node_modules에 있는 모든 라이브러리들을 컴파일하라는 명령이기 떄문에 node_modules에 딱히 수정한게 없으신분들은 이 문장을 빼고 컴파일하셔야 용량이 줄어들거에요!*
+
+
+
+```javascript
 const ansiRegex = require('ansi-regex')
 module.exports = {
   lintOnSave : false,
   publicPath: 'dist/',
   assetsDir: process.env.BASE_URL,
+  //아래 코드는 node_modules에 수정사항이 있으면 살려두고 아니면 주석처리
   transpileDependencies: [ansiRegex]
 }
 ```
