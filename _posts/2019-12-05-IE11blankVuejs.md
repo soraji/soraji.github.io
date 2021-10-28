@@ -10,9 +10,9 @@ comments: true
 
 혹시나 다른이유때문에 안나오는것같으면 뒤의 2,3편도 참고해주세요
 
-[Vue를 적용하니 IE11에서 하얀화면(blank)으로 나올때 2편](https://soraji.github.io/front/2020/06/25/vueIEBlank2/)
+[Vue를 적용하니 IE11에서 하얀화면(blank)으로 나올때 2편](https://soraji.github.io/vue/2020/06/25/vueIEBlank2/)
 
-[Vue를 적용하니 IE11에서 하얀화면(blank)으로 나올때 3편](https://soraji.github.io/front/2020/08/07/IEblank3/)
+[Vue를 적용하니 IE11에서 하얀화면(blank)으로 나올때 3편](https://soraji.github.io/vue/2020/08/07/IEblank3/)
 
 
 
