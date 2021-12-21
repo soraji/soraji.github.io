@@ -54,11 +54,11 @@ function existCheck(){
 
 
 
-위의 `if(str.indexOf('result') != -1)`  말고도 `if(str.indexOf('result') > 0)` 이런식으로 작성해도 된다
+위의 `if(str.indexOf('result') != -1)`  말고도 `if(str.indexOf('result') >= 0)` 이런식으로 작성해도 된다
 
 무궁무진함..... 포인트는,
 
-존재한다 =>1이상의 숫자로 return 
+존재한다 =>0이상의 숫자로 return 
 
 존재하지 않는다 => -1로 return
 
