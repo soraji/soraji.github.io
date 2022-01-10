@@ -46,4 +46,4 @@ example))
 
 상세페이지, 썸네일 등 만들어보는 경험이 좋았닿 ㅎㅎㅎㅎㅎ
 
-https://www.noutecompany.com/shop_view/?idx=519
+https://www.webudding.com/goodnoute_notepad/?idx=519
