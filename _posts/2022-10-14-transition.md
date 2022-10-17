@@ -12,7 +12,7 @@ comments: true
 
 <br>
 
-* ` transition-property` : 어떠한 속성에 transition을 적용할 것인지 지정한다
+* `transition-property` : 어떠한 속성에 transition을 적용할 것인지 지정한다
 
   ~~~
   transition-property : color, transform
