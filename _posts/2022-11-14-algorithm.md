@@ -28,9 +28,10 @@ n이 양의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 양�
 ~~~Js
 function solution(n) {
     var answer = 0;
-    if(Number.isInteger(Math.sqrt(n)) && Math.sqrt(n) > 0){
+    if(Number.isInteger(Math.sqrt(n)) && Math.sqrt(n) > 0){	//n의 루트값이 정수이고, n의 루트값이 0보다 크다면
+      	//answer는 n의 루트값에 1을 더한값의 2제곱
         answer = Math.pow(Math.sqrt(n) + 1, 2);
-    }else if(!Number.isInteger(Math.sqrt(n))){
+    }else if(!Number.isInteger(Math.sqrt(n))){	//n의 루트값이 정수가 아니라면 ex)1.87678
         answer = -1;
     }
     return answer;
@@ -72,13 +73,14 @@ function solution(n) {
 ~~~js
 function solution(n) {
     var answer = 0;
-    for(let i = 1; i * i <= n; i++){
-        if(i * i === n){
-            answer = i +1
-          //아래 3가지 방법중에 하나로 return 하기
-            return answer * answer 
-            return (i+1) * (i+1)
-            return (i+1)**2
+    for(let i = 1; i * i <= n; i++){	//i는 1부터 시작, i*i(=i의 제곱)가 n보다 작거나 같을때까지 i를 +해준다
+        if(i * i === n){	//i의 제곱이 n과 같다면
+            answer = i +1	//answer는 i(=n의 루트값) +1
+          
+          	//아래 3가지 방법중에 하나로 return 하기
+            return answer * answer //(i+1)의 제곱
+            return (i+1) * (i+1)	//(i+1)의 제곱
+            return (i+1)**2	//(i+1)의 제곱
         }
         
     }
