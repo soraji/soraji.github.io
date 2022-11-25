@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "프로그래머스: 최대공약수 & 최소공배수"
+title:  "프로그래머스: 최대공약수 & 최소공배수(Math.max)"
 categories: code
 comments: true
 
