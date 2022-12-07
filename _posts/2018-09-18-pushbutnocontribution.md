@@ -2,7 +2,7 @@
 layout: post
 title:  "깃허브 푸시는 되는데 컨트리뷰션 그래프에 찍히지 않을때"
 subtitle:   "etc"
-categories: web
+categories: error
 comments: true
 
 

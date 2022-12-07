@@ -2,7 +2,7 @@
 layout: post
 title:  "Private fork Repository not found"
 subtitle:   ""
-categories: web
+categories: error
 comments: true
 ---
 

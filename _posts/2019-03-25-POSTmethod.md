@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "java에서 POST 방식으로 response가져오기2"
+title:  "[java] java에서 POST 방식으로 response가져오기2"
 categories: back
 comments: true
 

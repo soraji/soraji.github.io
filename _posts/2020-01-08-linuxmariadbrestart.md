@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "리눅스에서 mariadb(mysql)에러 Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock'"
-categories: back
+categories: error
 comments: true
 
 

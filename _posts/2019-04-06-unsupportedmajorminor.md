@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[java] org/openqa/selenium/WebDriver : Unsupported major.minor version 52.0"
-categories: back
+categories: error
 comments: true
 ---
 

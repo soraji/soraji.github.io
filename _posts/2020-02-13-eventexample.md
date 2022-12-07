@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "vue input value에 공백제거, 숫자만 입력가능하게 하기"
+title:  "[Vue.js] vue input value에 공백제거, 숫자만 입력가능하게 하기"
 categories: front 
 comments: true
 ---

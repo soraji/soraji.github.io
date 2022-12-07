@@ -2,7 +2,7 @@
 layout: post
 title:  "토르 연결실패 했을때(TOR failed to establish a TOR network connection)"
 subtitle:   ""
-categories: web
+categories: error
 comments: true
 
 

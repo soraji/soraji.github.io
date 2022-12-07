@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "error)UnhandledPromiseRejectionWarning: Error: Cannot determine a GraphQL output type for the 'x'. Make sure your class is decorated with an appropriate decorator."
-categories: back
+categories: error
 comments: true
 
 ---

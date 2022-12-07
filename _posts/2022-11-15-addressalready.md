@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Mac에러 address already in use :::3000"
-categories: back
+categories: error
 comments: true
 
 
