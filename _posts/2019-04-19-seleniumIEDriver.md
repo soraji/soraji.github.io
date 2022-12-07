@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[java] 셀레니움 IE 기본설정(selenium IE)"
-categories: java
+categories: back
 comments: true
 
 

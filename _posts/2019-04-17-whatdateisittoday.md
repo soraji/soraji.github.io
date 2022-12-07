@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[java] 오늘의 요일구하기"
-categories: java
+categories: back
 comments: true
 
 ---

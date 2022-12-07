@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Vue.js] for문에서 변수가져오기(file1,file2,file3...file10에서 file1,file2만 가져오기)"
-categories: vue 
+categories: front 
 comments: true
 ---
 

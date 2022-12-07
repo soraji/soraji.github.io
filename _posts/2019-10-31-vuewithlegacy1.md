@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Vue.js] #1.레거시 위에 vue.js 올리기(IIS웹서버에 vue 빌드 올리기)"
-categories: vue 
+categories: front 
 comments: true
 ---
 

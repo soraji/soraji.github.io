@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[java] 자바selenium(셀레니움)으로 엘리먼트 클릭하고 현재url 알아내기"
-categories: java
+categories: back
 comments: true
 ---
 

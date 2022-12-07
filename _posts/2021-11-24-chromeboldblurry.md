@@ -2,7 +2,7 @@
 layout: post
 title:  "[css] 크롬에서 bold설정하면 폰트 흐려지는 현상"
 subtitle:   ""
-categories: markup 
+categories: front 
 comments: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[java] specified vm install not found 에러"
-categories: java
+categories: back
 comments: true
 
 

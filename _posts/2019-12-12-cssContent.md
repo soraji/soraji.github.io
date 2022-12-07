@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[css] content속성 크롬은 나오는데 IE에서는 안나온다?"
-categories: markup 
+categories: front 
 comments: true
 
 

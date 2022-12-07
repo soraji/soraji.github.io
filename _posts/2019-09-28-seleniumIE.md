@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[java] selenium IE : NoSuchWindowException : Unable to get browser에러"
-categories: java
+categories: back
 comments: true
 
 

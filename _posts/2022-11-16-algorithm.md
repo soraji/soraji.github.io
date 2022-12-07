@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "프로그래머스: 없는 숫자 더하기"
-categories: code
+categories: algo
 comments: true
 
 ---

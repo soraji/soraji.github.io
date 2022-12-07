@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[python jupyter notebook]주피터노트북 사용법"
-categories: python
+categories: back
 comments: true
 ---
 

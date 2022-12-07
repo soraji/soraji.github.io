@@ -2,7 +2,7 @@
 layout: post
 title:  "[css] bootstrap-select에서 background-color바꾸기"
 subtitle:   ""
-categories: markup 
+categories: front 
 comments: true
 ---
 

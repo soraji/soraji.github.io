@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "프로그래머스: 콜라츠추측"
-categories: code
+categories: algo
 comments: true
 
 ---

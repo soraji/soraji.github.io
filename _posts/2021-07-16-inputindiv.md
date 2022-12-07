@@ -2,7 +2,7 @@
 layout: post
 title:  "[css] td 안의 div width 100%, div안의 input width100%"
 subtitle:   ""
-categories: markup 
+categories: front 
 comments: true
 ---
 

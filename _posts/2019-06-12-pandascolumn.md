@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[python]파이썬 pandas DataFrame column추가/ 데이터프레임 컬럼추가"
-categories: python
+categories: back
 comments: true
 
 ---

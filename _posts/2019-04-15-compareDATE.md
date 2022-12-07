@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[java] 날짜 비교하기"
-categories: java
+categories: back
 comments: true
 
 ---

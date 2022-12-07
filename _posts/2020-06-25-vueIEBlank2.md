@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Vue.js] Vue를 적용하니 IE11에서 하얀화면(blank)으로 나올때 2 "
-categories: vue 
+categories: front 
 comments: true
 
 ---

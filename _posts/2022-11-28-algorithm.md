@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "프로그래머스: 시저 암호(대소문자알파벳배열이용/reduce함수/유니코드메서드/charCodeAt/fromCharCode)"
-categories: code
+categories: algo
 comments: true
 ---
 

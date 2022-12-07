@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "프로그래머스: 완주하지 못한 선수 (splice/indexOf/sort로비교/filter 사용)"
-categories: code
+categories: algo
 comments: true
 
 ---

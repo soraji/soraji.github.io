@@ -2,7 +2,7 @@
 layout: post
 title:  "[css] safari에서 디폴트폰트가 명조로 나올때(font-family설정)"
 subtitle:   ""
-categories: markup 
+categories: front 
 comments: true
 ---
 

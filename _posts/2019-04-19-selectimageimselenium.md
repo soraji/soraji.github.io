@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[java] 이미지 선택자 in selenium"
-categories: java
+categories: back
 comments: true
 
 

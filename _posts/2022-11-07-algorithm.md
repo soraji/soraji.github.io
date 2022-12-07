@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "배열내 중복값 삭제(map, filter, reduce, set)"
-categories: code
+categories: algo
 comments: true
 
 ---

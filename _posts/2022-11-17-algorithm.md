@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "프로그래머스: 내적"
-categories: code
+categories: algo
 comments: true
 
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "java에서 POST 방식으로 response가져오기"
-categories: java
+categories: back
 comments: true
 
 ---

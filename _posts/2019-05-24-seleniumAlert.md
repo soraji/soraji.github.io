@@ -2,7 +2,7 @@
 layout: post
 title:  "[Java] 셀레니움으로 알럿 확인(selenium alert confirm)"
 subtitle:   ""
-categories: java
+categories: back
 comments: true
 
 

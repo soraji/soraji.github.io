@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Vue.js] #2.레거시 위에 vue.js 올리기(IIS에서 node.js (vue.js) 연동하기)"
-categories: vue 
+categories: front 
 comments: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[java] TOR 브라우저 사용기 with 셀레니움 (tor selenium)"
-categories: java
+categories: back
 comments: true
 
 

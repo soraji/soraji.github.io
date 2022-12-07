@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Vue.js] Vue for문에서 id값주기(vue id-binding in loop)"
-categories: vue 
+categories: front 
 comments: true
 
 

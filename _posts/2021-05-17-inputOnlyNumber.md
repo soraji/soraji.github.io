@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Vue.js] input에 숫자만 입력가능하게 2 (한글 자음/모음 입력방지) "
-categories: vue 
+categories: front 
 comments: true
 ---
 

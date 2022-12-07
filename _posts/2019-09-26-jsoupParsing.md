@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[java] jsoup Parsing Read timed out error jsoup파싱에러"
-categories: java
+categories: back
 comments: true
 
 ---

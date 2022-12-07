@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "프로그래머스: 2016 (원하는 날짜 요일구하기) new Date()/getDay/reduce"
-categories: code
+categories: algo
 comments: true
 
 ---

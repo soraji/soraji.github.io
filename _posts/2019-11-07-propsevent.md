@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Vue.js] Vue 부모컴포넌트와 자식컴포넌트의 데이터 송신방법"
-categories: vue 
+categories: front 
 comments: true
 
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[python offset index]파이썬 오프셋 인덱스"
-categories: python
+categories: back
 comments: true
 
 ---

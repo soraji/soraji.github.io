@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "정수 제곱근 판별"
-categories: code
+categories: algo
 comments: true
 
 ---

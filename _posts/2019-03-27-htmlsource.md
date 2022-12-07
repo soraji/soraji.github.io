@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[java]java에서 html소스 불러오기"
-categories: java
+categories: back
 comments: true
 
 

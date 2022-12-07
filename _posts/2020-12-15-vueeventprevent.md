@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Vue.js] Vue에서 enter로 key up 될때 submit 방지"
-categories: vue 
+categories: front 
 comments: true
 
 ---

@@ -2,7 +2,7 @@
 layout: post
 title:  "[css] transform에 대해 알아보자"
 subtitle:   ""
-categories: markup 
+categories: front 
 comments: true
 ---
 

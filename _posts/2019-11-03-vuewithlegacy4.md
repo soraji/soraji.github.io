@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Vue.js] #4.레거시 위에 vue.js 올리기(레거시에서 로그인 세션 vue로 가져오기)"
-categories: vue 
+categories: front 
 comments: true
 
 

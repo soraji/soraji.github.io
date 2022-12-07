@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[java] eclipse SVN commit 'is out of date' 오류 해결 방법"
-categories: java
+categories: back
 comments: true
 
 
