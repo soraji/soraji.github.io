@@ -1,0 +1,68 @@
+---
+layout: post
+title:  "올바른 괄호"
+categories: algo
+comments: true
+---
+
+<br>
+
+<br>
+
+괄호가 입력되면 올바른 괄호이면 “YES", 올바르지 않으면 ”NO"를 출력합니다.
+
+(())() 이것은 괄호의 쌍이 올바르게 위치하는 거지만, (()()))은 올바른 괄호가 아니다.
+
+<br>
+
+---
+
+# CASE 1
+
+~~~js
+function solution(s){
+    let answer="YES";
+    stack=[];
+    for(let x of s){	//문자열s의 글자 하나하나 돌기
+        if( x==='(' ) stack.push(x);	//만약에 열린괄호라면 stack에 열린괄호 넣기
+        else{	//열린괄호가 아니라면 (짝을 맞춰서 삭제해주어야한다)
+            if(stack.length===0) return "NO";	//마지막 값을 삭제해주려고 하는데 아무것도 없으면 잘못된괄호(닫힌괄호가 먼저 들어오는 경우가 해당됨)
+            stack.pop();	//(열린괄호가 있으면)stack의 마지막 값(stack의 마지막 값이므로 열린괄호가 삭제된다) 삭제
+        }
+    }
+    if(stack.length>0) return "NO";  //열린괄호와 닫힌괄호와 짝이 맞아서 삭제했는데 배열에 남아있다면 갯수 안맞은거라 올바른 괄호짝이 아님(닫힌괄호가 먼저 들어오는 경우가 해당됨)
+    return answer;
+}
+
+let a="(()(()))(()";
+console.log(solution(a));
+~~~
+
+---
+
+<br>
+
+스택을 이용한 문제이다.
+
+여러개의 괄호에서 괄호가 열렸을때와 닫혔을때를 비교해서 제대로 닫혔는지 아닌지 확인을 해야한다.
+
+`스택(stack)`은 어떤 구덩이가 있다고 치면 
+
+첫번째 들어간게 제일 밑에 있어서 제일 마지막에 들어간걸 꺼내야만 처음에 들어간걸 꺼낼 수 있는 개념이다.
+
+그에 반해 `큐(Queue)`는 밑에가 뚫려있는 통에 무언가를 계속 넣어서 위에서 밑빠진 독처럼 생긴 개념이다.
+
+<br>
+
+![스택과큐](/assets/img/2022-12-08/IMG_6957.jpg)
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+출처 :  [자바스크립트 알고리즘 문제풀이 입문(코딩테스트 대비)](https://www.inflearn.com/course/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/dashboard)를 보고 작성!
+
