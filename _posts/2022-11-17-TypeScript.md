@@ -11,6 +11,8 @@ comments: true
 
 <Br>
 
+![typescript](/assets/img/devcate/ts.png)
+
 # TypeScript Type
 
 <br>

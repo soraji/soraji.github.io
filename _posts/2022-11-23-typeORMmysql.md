@@ -10,6 +10,8 @@ comments: true
 
 <br>
 
+![typeorm](/assets/img/devcate/typeorm.png)
+
 # TypeORM & Entity
 
 엔티티 : ''개체'' 의 뜻을 가지고 있다.
