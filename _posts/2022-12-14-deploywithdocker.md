@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "micro service"
+title:  "도커로 GCP에서 배포하기(deploy with docker)"
 categories: back
 comments: true
 
