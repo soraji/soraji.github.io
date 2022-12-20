@@ -35,7 +35,7 @@ $ echo $SHELL
 
 `/bin/bash` : `bash` 가 본인의 shell
 
-나는 처음에 bash가 내 shell인줄 알았지 (  ˊ࿁ˋ ) ᐝ....
+(나는 처음에 bash가 내 shell인줄 알았지 (  ˊ࿁ˋ ) ᐝ....)
 
 그래서 
 
