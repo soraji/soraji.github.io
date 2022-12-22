@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "쿠버네티스로 배포하기 1편"
+title:  "쿠버네티스로 배포하기 1편 (나의 nest.js 프로젝트 GCP에 올리기)"
 categories: back
 comments: true
 
@@ -15,7 +15,7 @@ comments: true
 
 <br>
 
-# 쿠버네티스로 배포하기
+# 쿠버네티스로 배포하기 1편
 
 배포하다가 멘붕 온 사람으로.... 몇시간이 걸려도 기록하고 말겠다....
 
@@ -210,7 +210,7 @@ my-backend:
 
 <br>
 
-:star2: push가 완료되는 순간, `asia.gcr.io/프로젝트ID/만들고싶은폴더이름:0.0` 이 경로를 찾아 빌드된 소스코드를 업로드한다. :star2:
+🌟 push가 완료되는 순간, `asia.gcr.io/프로젝트ID/만들고싶은폴더이름:0.0` 이 경로를 찾아 빌드된 소스코드를 업로드한다.🌟
 
 확인하는 방법은 
 
@@ -272,7 +272,7 @@ VM인스턴스로 배포했을때는 git에 .env파일이 올라가지 않기때
 
 ![쿠버네티스](/assets/img/kubernetes/8.png)
 
-이게 aws에서는 자동 생성이 되지 않는다고 하니... gcp에서 만들어서 yaml파일을 복사 하는것도 일종의 :honey_pot: 팁이라고 한다!
+이게 aws에서는 자동 생성이 되지 않는다고 하니... gcp에서 만들어서 yaml파일을 복사 하는것도 일종의 🍯팁이라고 한다!
 
 <br>
 
@@ -325,36 +325,6 @@ db처럼 외부에 공개하는게 위험하고, 클러스터 내부에서만 �
 <br>
 
 <br>
-
-### cloudSQL 데이터베이스 만들기(mysql)
-
----
-
-구글 클라우드 SQL을 사용해서 nestjs와 연결해주자.
-
-![쿠버네티스](/assets/img/kubernetes/14.png)
-
-새로 만드는거, 삭제하는거 죄다 시간이 꽤나 걸린다. (Ծ‸ Ծ)
-
-![쿠버네티스](/assets/img/kubernetes/15.png)
-
-mysql로 디비를 만든다.
-
-`인스턴스ID` 를 작성한다.
-
-`비밀번호`는 `root`
-
-`시작할 구성선택`에서는 `Development` (만약 `Production`을 선택하면 컴퓨터가 2대이기때문에 요금이 2배.....)
-
-`리전`은 `asia-northeast3` 
-
-`영역가용성` 은 `단일영역`
-
-비용을 줄이려면 `머신유형` 에서 cpu를 줄이고.. (별로 차이는 안난다.)
-
-`연결` 에서는 `비공개IP` 를 선택한다. DB니까 공개되면 안됨. `네트워크` 는 `default` 를 선택.
-
-그리고 `인스턴스 만들기` 클릭 => DB생성 완료! (생성되는데 15분정도 걸린다)
 
 <br>
 
@@ -445,50 +415,6 @@ services:
 `docker-compose -f docker-compose.prod.yaml build` 
 
 `docker-compose -f docker-compose.prod.yaml push` 로 다시 push해준다(prod.yaml파일의 버전 올려줘야한다!!!)
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-### gcloudSQL 연결
-
----
-
-![쿠버네티스](/assets/img/kubernetes/16.png)
-
-데이터베이스를 만들어주는데 이름은 쿠버네티스 `작업부하` 에서 배포했던 환경변수에 입력한 데이터베이스 이름으로 변경하면 된다.
-
-만약 기억이 안난다면 (미래의 나 보고 있니?)
-
-![쿠버네티스](/assets/img/kubernetes/17.png)
-
-쿠버네티스의 `보안 비밀 및 ConfigMap` 에 들어가서 배포했던 컨테이너 이름으로 되어있는 config에 들어가보면
-
-데이터 부분에 적어둔 데이터베이스 이름을 적어주면 된다.
-
-(만약 환경변수를 적어줘야할 일이 있다면 이곳에서 수정하면 된다.)
-
-이제 HOST부분을 연결해야하는데, 
-
-HOST부분은 SQL에서 확인하면 된다.
-
-![쿠버네티스](/assets/img/kubernetes/18.png)
-
-`비공개IP 주소` 를 복사해서 `보안 비밀 및 ConfigMap` 의 환경변수를 수정해서 연결시킨다.
-
-![쿠버네티스](/assets/img/kubernetes/17.png)
-
-이런식으로..
-
-
-
-<br>
-
-<br>
 
 <br>
 
