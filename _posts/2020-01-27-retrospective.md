@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "1달이나 늦은 2019년 회고"
+title:  "[ 회고 ] 2019년 회고"
 subtitle:   ""
 categories: mind
 comments: true

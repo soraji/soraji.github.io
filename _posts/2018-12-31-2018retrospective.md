@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "2018년 회고"
+title:  "[ 회고 ] 2018년 회고"
 subtitle:   ""
 categories: mind
 comments: true
