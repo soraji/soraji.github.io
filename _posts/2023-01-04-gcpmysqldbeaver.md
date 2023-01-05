@@ -33,7 +33,7 @@ gcp에서 기본적으로 mysql을 만들면 그걸 조회해보는건 gcloud sh
 
 <br>
 
-![gcp](/assets/img/2022-01-04/5.png)
+![gcp](/assets/img/2023-01-04/5.png)
 
 이러나저러나 외부에서 접속을 하기 위해서는 공개ip를 눌러서 수정해줘야한다.
 
@@ -55,7 +55,7 @@ gcp에서 기본적으로 mysql을 만들면 그걸 조회해보는건 gcloud sh
 
 gcloud shell에서 접속해보자
 
-![gcp](/assets/img/2022-01-04/1.png)
+![gcp](/assets/img/2023-01-04/1.png)
 
 인스턴스에 접속해야하는데, 인스턴스이름이 뭔지 어떻게 알아....
 
@@ -71,7 +71,7 @@ $ gcloud sql instances list
 $ gcloud sql connect 인스턴스이름 --user=root
 ~~~
 
-![gcp](/assets/img/2022-01-04/2.png)
+![gcp](/assets/img/2023-01-04/2.png)
 
 ~~~
 show databases;
@@ -79,7 +79,7 @@ show databases;
 
 데이터베이스 조회
 
-![gcp](/assets/img/2022-01-04/3.png)
+![gcp](/assets/img/2023-01-04/3.png)
 
 ~~~
 use yoramyoram;
@@ -93,7 +93,7 @@ show tables;
 
 테이블 조회
 
-![gcp](/assets/img/2022-01-04/4.png)
+![gcp](/assets/img/2023-01-04/4.png)
 
 ~~~
 select * from user;
@@ -105,7 +105,7 @@ select * from user;
 
 
 
-![gcp](/assets/img/2022-01-04/6.png)
+![gcp](/assets/img/2023-01-04/6.png)
 
 진짜 최악이지만 디비버에서 연결하려면 어쩔수없다.
 
@@ -131,7 +131,7 @@ TCP > 3306
 
 이렇게 생성하면 됨
 
-![gcp](/assets/img/2022-01-04/7.png)
+![gcp](/assets/img/2023-01-04/7.png)
 
 제대로 연결하면 이렇게 잘 불러온걸 알수있다.
 
