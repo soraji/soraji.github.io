@@ -39,9 +39,12 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
 
 메인페이지
 
-![vuework](/assets/img/work/yoramyoram/main.gif)
+<div style="display:flex;flex-direction:row;justify-content : space-between">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/main.gif" style="width:600px">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)main.gif" style="height:400px">
+</div>
 
-![vuework](/assets/img/work/yoramyoram/(m)main.gif)
+
 
 풀페이지로 작업했음
 
@@ -53,9 +56,12 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
 
 소개페이지
 
-![vuework](/assets/img/work/yoramyoram/introduction.gif)
+<div style="display:flex;flex-direction:row;justify-content : space-between">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/introduction.gif" style="width:600px">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)intro.gif" style="height:400px">
+</div>
 
-![vuework](/assets/img/work/yoramyoram/(m)intro.gif)
+
 
 <br>
 
@@ -65,9 +71,12 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
 
 회원가입
 
-![vuework](/assets/img/work/yoramyoram/signup.gif)
+<div style="display:flex;flex-direction:row;justify-content : space-between">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/signup.gif" style="width:600px">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)signup.gif" style="height:400px">
+</div>
 
-![vuework](/assets/img/work/yoramyoram/(m)signup.gif)
+
 
 핸드폰인증(유일값)을 해야만 가입이 가능함
 
@@ -79,9 +88,12 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
 
 로그인페이지
 
-![vuework](/assets/img/work/yoramyoram/login.gif)
+<div style="display:flex;flex-direction:row;justify-content : space-between">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/login.gif" style="width:600px">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)login.gif" style="height:400px">
+</div>
 
-![vuework](/assets/img/work/yoramyoram/(m)login.gif)
+
 
 이메일찾기 : 이름과 핸드폰번호로 이메일을 찾을 수 있음
 
@@ -95,9 +107,12 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
 
 오프라인 지도([스마트서울맵 api](https://map.seoul.go.kr/smgis2/openApi)사용)
 
-![vuework](/assets/img/work/yoramyoram/offline.gif)
+<div style="display:flex;flex-direction:row;justify-content : space-between">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/offline.gif" style="width:600px">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)offline.gif" style="height:400px">
+</div>
 
-![vuework](/assets/img/work/yoramyoram/(m)offline.gif)
+
 
 스마트서울맵에서 상점의 이름을 파라미터로 보내 정보를 받아오면
 
@@ -113,9 +128,12 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
 
 상품목록
 
-![vuework](/assets/img/work/yoramyoram/list.gif)
+<div style="display:flex;flex-direction:row;justify-content : space-between">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/list.gif" style="width:600px">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)list.gif" style="height:400px">
+</div>
 
-![vuework](/assets/img/work/yoramyoram/(m)list.gif)
+
 
 페이지네이션으로 상품목록 조회함
 
@@ -135,9 +153,12 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
 
 상품 상세페이지
 
-![vuework](/assets/img/work/yoramyoram/detail.gif)
+<div style="display:flex;flex-direction:row;justify-content : space-between">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/detail.gif" style="width:600px">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)detail.gif" style="height:400px">
+</div>
 
-![vuework](/assets/img/work/yoramyoram/(m)detail.gif)
+
 
 썸네일등록, 옵션값이 있으면 보여주고 없어주면 보여주지 않음
 
@@ -149,9 +170,12 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
 
 찜목록
 
-![vuework](/assets/img/work/yoramyoram/wishlist.gif)
+<div style="display:flex;flex-direction:row;justify-content : space-between">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/wishlist.gif" style="width:600px">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)wishlist.gif" style="height:400px">
+</div>
 
-![vuework](/assets/img/work/yoramyoram/(m)wishlist.gif)
+
 
 <br>
 
@@ -161,9 +185,12 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
 
 장바구니
 
-![vuework](/assets/img/work/yoramyoram/cart.gif)
+<div style="display:flex;flex-direction:row;justify-content : space-between">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/cart.gif" style="width:600px">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)cart.gif" style="height:400px">
+</div>
 
-![vuework](/assets/img/work/yoramyoram/(m)cart.gif)
+
 
 <br>
 
@@ -173,9 +200,12 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
 
 상품등록
 
-![vuework](/assets/img/work/yoramyoram/register.gif)
+<div style="display:flex;flex-direction:row;justify-content : space-between">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/register.gif" style="width:600px">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)register.gif" style="height:400px">
+</div>
 
-![vuework](/assets/img/work/yoramyoram/(m)register.gif)
+
 
 어드민 계정만 상품을 등록할 수 있다. 
 
