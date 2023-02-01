@@ -39,10 +39,11 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
 
 메인페이지
 
-<div style="display:flex;flex-direction:row;justify-content : space-between">
-  <img src="https://soraji.github.io/assets/img/work/yoramyoram/main.gif" style="width:600px">
-  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)main.gif" style="height:400px">
+<div style="display:flex;flex-direction:row;justify-content : space-between;align-items:center">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/main.gif" style="height:300px">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)main.gif" style="height:300px">
 </div>
+
 
 
 
@@ -56,10 +57,11 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
 
 소개페이지
 
-<div style="display:flex;flex-direction:row;justify-content : space-between">
-  <img src="https://soraji.github.io/assets/img/work/yoramyoram/introduction.gif" style="width:600px">
-  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)intro.gif" style="height:400px">
+<div style="display:flex;flex-direction:row;justify-content : space-between;align-items:center">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/introduction.gif" style="height:300px">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)intro.gif" style="height:300px">
 </div>
+
 
 
 
@@ -71,10 +73,11 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
 
 회원가입
 
-<div style="display:flex;flex-direction:row;justify-content : space-between">
-  <img src="https://soraji.github.io/assets/img/work/yoramyoram/signup.gif" style="width:600px">
-  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)signup.gif" style="height:400px">
+<div style="display:flex;flex-direction:row;justify-content : space-between;align-items:center">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/signup.gif" style="height:300px">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)signup.gif" style="height:300px">
 </div>
+
 
 
 
@@ -88,10 +91,11 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
 
 로그인페이지
 
-<div style="display:flex;flex-direction:row;justify-content : space-between">
-  <img src="https://soraji.github.io/assets/img/work/yoramyoram/login.gif" style="width:600px">
-  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)login.gif" style="height:400px">
+<div style="display:flex;flex-direction:row;justify-content : space-between;align-items:center">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/login.gif" style="height:300px">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)login.gif" style="height:300px">
 </div>
+
 
 
 
@@ -107,10 +111,11 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
 
 오프라인 지도([스마트서울맵 api](https://map.seoul.go.kr/smgis2/openApi)사용)
 
-<div style="display:flex;flex-direction:row;justify-content : space-between">
-  <img src="https://soraji.github.io/assets/img/work/yoramyoram/offline.gif" style="width:600px">
-  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)offline.gif" style="height:400px">
+<div style="display:flex;flex-direction:row;justify-content : space-between;align-items:center">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/offline.gif" style="height:300px">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)offline.gif" style="height:300px">
 </div>
+
 
 
 
@@ -153,10 +158,11 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
 
 상품 상세페이지
 
-<div style="display:flex;flex-direction:row;justify-content : space-between">
-  <img src="https://soraji.github.io/assets/img/work/yoramyoram/detail.gif" style="width:600px">
-  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)detail.gif" style="height:400px">
+<div style="display:flex;flex-direction:row;justify-content : space-between;align-items:center">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/detail.gif" style="height:300px">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)detail.gif" style="height:300px">
 </div>
+
 
 
 
@@ -170,10 +176,11 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
 
 찜목록
 
-<div style="display:flex;flex-direction:row;justify-content : space-between">
-  <img src="https://soraji.github.io/assets/img/work/yoramyoram/wishlist.gif" style="width:600px">
-  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)wishlist.gif" style="height:400px">
+<div style="display:flex;flex-direction:row;justify-content : space-between;align-items:center">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/wishlist.gif" style="height:300px">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)wishlist.gif" style="height:300px">
 </div>
+
 
 
 
@@ -185,10 +192,11 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
 
 장바구니
 
-<div style="display:flex;flex-direction:row;justify-content : space-between">
-  <img src="https://soraji.github.io/assets/img/work/yoramyoram/cart.gif" style="width:600px">
-  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)cart.gif" style="height:400px">
+<div style="display:flex;flex-direction:row;justify-content : space-between;align-items:center">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/cart.gif" style="height:300px">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)cart.gif" style="height:300px">
 </div>
+
 
 
 
@@ -200,10 +208,11 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
 
 상품등록
 
-<div style="display:flex;flex-direction:row;justify-content : space-between">
-  <img src="https://soraji.github.io/assets/img/work/yoramyoram/register.gif" style="width:600px">
-  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)register.gif" style="height:400px">
+<div style="display:flex;flex-direction:row;justify-content : space-between;align-items:center">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/register.gif" style="height:300px">
+  <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)register.gif" style="height:300px">
 </div>
+
 
 
 
