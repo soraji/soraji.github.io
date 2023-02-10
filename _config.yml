@@ -2,62 +2,62 @@
 #  User configuration
 # -----------------------------------------------------------------------------
 
-title:               Sora
+title: Sora
 
 # The unique resource location of your page.
 # Set to `https://<username>.github.io` when hosting on GitHub Pages
-url:                 https://soraji.github.io
+url: https://soraji.github.io
 
 # Set to '' when hosting a blog on GitHub Pages, ie on `//<username>.github.io`
 # Set to '/<reponame>' when using the `gh-pages` branch of a repository
-baseurl:             ""
+baseurl: ""
 
 # A very short description of your page
-tagline:             지소라 성장일지
+tagline: 지소라 성장일지
 
 # A short description of the page, used in the sidebar and as fallback for the meta description tag.
 # Markdown enabled, but don't use more than one paragraph (enforced by `>`)
-description:         >
-  만드는걸 좋아해요. 크롤링(java)과 웹개발(vue)을 주로합니다 ✿˘◡˘✿
+description: >
+  만드는걸 좋아해요. 노는것보다 배우는것을 좋아합니다 ˚ ₊ ෆ꒰◍ᐡᐤᐡ◍꒱
 
 # This should be the same author as first entry in `_data/authors.yml`
 author:
-  name:              sora ji
-  email:             wlthfk0211@gmail.com
+  name: sora ji
+  email: wlthfk0211@gmail.com
 
 # Fallback image and color
-image:               /assets/img/purple.jpg
-color:               '#af69ee'
+image: /assets/img/purple.jpg
+color: "#af69ee"
 
 # The font used for headings. Expects a string that is a valid CSS font-family value.
-font_heading:        "'Lato', 'Sans-serif'"
+font_heading: "'Lato', 'Sans-serif'"
 
 # The text font. Expects a string that is a valid CSS font-family value.
-font:                "'Lato', 'Sans-serif'"
+font: "'Lato', 'Sans-serif'"
 
 # The string encoding what fonts to fetch from Google Fonts.
 # See: https://qwtel.com/hydejack/docs/configuration/
-google_fonts:        Lato
+google_fonts: Lato
 
 # If you do not use a Google Fonts, uncomment the line below
 # no_google_fonts:     true
 
 # Set your Google Analytics id to receive `pageview` events.
 # To remove Google Anaylics from your page, remove the line below.
-google_analytics:    #UA-92346434-1
+google_analytics: #UA-92346434-1
 
 # Setting a disqus shortname will enable the comment section on pages with `comments: true` in the front matter
-disqus_shortname:    https-soraji-github-io-1
+disqus_shortname: https-soraji-github-io-1
 
 # This text will appear in the footer of every page. Markdown enabled.
-copyright:           '&copy; 2018. by sora'
+copyright: "&copy; 2018. by sora"
 
 # Format of the permalinks
-permalink:           pretty
+permalink: pretty
 
 # Pagination configuration (used by the `blog` layout)
-paginate:            8
-paginate_path:       '/page-:num/'
+paginate: 8
+paginate_path: "/page-:num/"
 
 # If you are upgrading form a v5 verison of Hydejack, uncomment the two lines below,
 # so that the location of the feed XML stays the same.
@@ -83,14 +83,14 @@ paginate_path:       '/page-:num/'
 
 collections:
   featured_categories:
-    permalink:       /category/:name/
-    output:          true
+    permalink: /category/:name/
+    output: true
   featured_tags:
-    permalink:       /tag/:name/
-    output:          true
+    permalink: /tag/:name/
+    output: true
   projects:
-    permalink:       /projects/:path/
-    output:          true
+    permalink: /projects/:path/
+    output: true
 
 # -----------------------------------------------------------------------------
 #  Advanced configuration
@@ -112,18 +112,18 @@ exclude:
   - Gemfile.lock
 
 kramdown:
-  footnote_backlink: '&#x21a9;&#xfe0e;'
-  math_engine:       mathjax
+  footnote_backlink: "&#x21a9;&#xfe0e;"
+  math_engine: mathjax
   math_engine_opts:
-    preview:         true
+    preview: true
     preview_as_code: true
 
 compress_html:
-  comments:          ["<!-- ", " -->"]
-  clippings:         all
-  endings:           all
+  comments: ["<!-- ", " -->"]
+  clippings: all
+  endings: all
   ignore:
-    envs:            [development]
+    envs: [development]
 
 sass:
-  style:             compressed
+  style: compressed
