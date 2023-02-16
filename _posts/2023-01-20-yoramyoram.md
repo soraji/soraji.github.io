@@ -1,15 +1,10 @@
 ---
 layout: post
-title:  "팀 프로젝트 yoramyoram"
-subtitle:   ""
+title: "[ 개발 ] 백 : NestJS, 프론트 : React를 이용한 웹 어플리케이션 GIF"
+subtitle: ""
 categories: work
 comments: true
-
 ---
-
-
-
-
 
 `github Actions` 를 이용한 `CI`
 
@@ -44,9 +39,6 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
   <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)main.gif" style="height:300px">
 </div>
 
-
-
-
 풀페이지로 작업했음
 
 <br>
@@ -62,9 +54,6 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
   <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)intro.gif" style="height:300px">
 </div>
 
-
-
-
 <br>
 
 <br>
@@ -77,9 +66,6 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
   <img src="https://soraji.github.io/assets/img/work/yoramyoram/signup.gif" style="height:300px">
   <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)signup.gif" style="height:300px">
 </div>
-
-
-
 
 핸드폰인증(유일값)을 해야만 가입이 가능함
 
@@ -95,9 +81,6 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
   <img src="https://soraji.github.io/assets/img/work/yoramyoram/login.gif" style="height:300px">
   <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)login.gif" style="height:300px">
 </div>
-
-
-
 
 이메일찾기 : 이름과 핸드폰번호로 이메일을 찾을 수 있음
 
@@ -115,9 +98,6 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
   <img src="https://soraji.github.io/assets/img/work/yoramyoram/offline.gif" style="height:300px">
   <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)offline.gif" style="height:300px">
 </div>
-
-
-
 
 스마트서울맵에서 상점의 이름을 파라미터로 보내 정보를 받아오면
 
@@ -137,8 +117,6 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
   <img src="https://soraji.github.io/assets/img/work/yoramyoram/list.gif" style="width:600px">
   <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)list.gif" style="height:400px">
 </div>
-
-
 
 페이지네이션으로 상품목록 조회함
 
@@ -163,9 +141,6 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
   <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)detail.gif" style="height:300px">
 </div>
 
-
-
-
 썸네일등록, 옵션값이 있으면 보여주고 없어주면 보여주지 않음
 
 <br>
@@ -181,9 +156,6 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
   <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)wishlist.gif" style="height:300px">
 </div>
 
-
-
-
 <br>
 
 <br>
@@ -196,9 +168,6 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
   <img src="https://soraji.github.io/assets/img/work/yoramyoram/cart.gif" style="height:300px">
   <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)cart.gif" style="height:300px">
 </div>
-
-
-
 
 <br>
 
@@ -213,24 +182,14 @@ CI 통과유무를 확인한뒤 `master branch`에 merge가 되면 CD가 실행�
   <img src="https://soraji.github.io/assets/img/work/yoramyoram/(m)register.gif" style="height:300px">
 </div>
 
-
-
-
-어드민 계정만 상품을 등록할 수 있다. 
+어드민 계정만 상품을 등록할 수 있다.
 
 옵션값은 셀렉트박스에 찍힐 `분류`와, 그 셀렉트박스 안에 옵션값으로 들어갈 `값`으로 구성되어있는데
 
 값은 엔터를 치면 태그처럼 뜨게 만들었음
 
-
-
-
-
 ---
 
-
-
 <br>
 
 <br>
-
