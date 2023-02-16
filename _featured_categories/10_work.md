@@ -4,7 +4,6 @@ title: WORKS
 slug: work
 menu: true
 submenu: false
-order: 11
+order: 10
 description: >
-  
 ---

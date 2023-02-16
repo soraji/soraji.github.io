@@ -18,7 +18,7 @@ tagline: 지소라 성장일지
 # A short description of the page, used in the sidebar and as fallback for the meta description tag.
 # Markdown enabled, but don't use more than one paragraph (enforced by `>`)
 description: >
-  만드는걸 좋아해요. 노는것보다 배우는것을 좋아합니다 ˚ ₊ ෆ꒰◍ᐡᐤᐡ◍꒱
+  노는것보다 배우는것을 좋아합니다 ෆ꒰◍ᐡᐤᐡ◍꒱
 
 # This should be the same author as first entry in `_data/authors.yml`
 author:
