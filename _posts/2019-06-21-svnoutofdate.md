@@ -1,20 +1,13 @@
 ---
 layout: post
-title:  "[java] eclipse SVN commit 'is out of date' 오류 해결 방법"
+title: "[ Java ] eclipse SVN commit 'is out of date' 오류 해결 방법"
 categories: error
 comments: true
-
-
-
 ---
-
-
 
 svn을 쓰다가 어떤 파일을 삭제했더니 out of date 오류가 떴다.
 
-Directory '파일경로' is out of date 뭐 이런식으로... 
-
-
+Directory '파일경로' is out of date 뭐 이런식으로...
 
 이럴때는
 

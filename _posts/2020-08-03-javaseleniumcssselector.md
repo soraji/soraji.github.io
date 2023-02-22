@@ -1,21 +1,9 @@
 ---
 layout: post
-title:  "[java] 자바selenium(셀레니움)으로 엘리먼트 클릭하고 현재url 알아내기"
+title: "[ Java ] 자바selenium(셀레니움)으로 엘리먼트 클릭하고 현재url 알아내기"
 categories: back
 comments: true
 ---
-
-
-
-
-
-
-
-
-
-
-
-
 
 ```java
 driver = new ChromeDriver(options);
@@ -23,8 +11,6 @@ driver.get("원하는 url");
 ```
 
 셀레니움으로 브라우저를 띄우고 원하는 url로 이동한다
-
-
 
 ```java
 WebElement el = driver.findElement(By.cssSelector("#pager > button.btn-last"));
@@ -42,7 +28,5 @@ el.click();
 ```java
 String url = driver.getCurrentUrl();
 ```
-
-
 
 현재url의 주소를 알고싶다면 `driver.getCurrentUrl`로 알아낼 수 있다.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "구글, 카카오, 네이버 소셜로그인 with Nest.js"
+title: "[ NestJS ] 구글, 카카오, 네이버 소셜로그인"
 categories: back
 comments: true
 ---
@@ -14,8 +14,6 @@ comments: true
 <br>
 
 # 소셜로그인 with google, kakao, naver
-
-
 
 요즘 어딜가든 보이는 소셜로그인... 예전부터 엄청 구현해보고 싶었는데
 
@@ -52,11 +50,11 @@ comments: true
 
 그러면, 실습을 해보자
 
-Nest.js에서 `src`폴더안에  `auth`폴더를 만들고,
+Nest.js에서 `src`폴더안에 `auth`폴더를 만들고,
 
 `auth.controller.ts` 파일안에 이렇게 코드를 짠다.
 
-~~~ts
+```ts
 // auth.controller.ts
 
 import { Controller, Get, Req, Res, UseGuards } from "@nestjs/common";
@@ -82,9 +80,9 @@ export class AuthController {	//클래스이름
 
   //-----------------------구글 로그인-----------------------------//
   @Get("/login/google")	//restAPI만들기. 엔드포인트는 /login/google.
-  @UseGuards(AuthGuard("google"))	//인증과정을 거쳐야하기때문에 UseGuards를 써주고 passport인증으로 AuthGuard를 써준다. 이름은 google로 
+  @UseGuards(AuthGuard("google"))	//인증과정을 거쳐야하기때문에 UseGuards를 써주고 passport인증으로 AuthGuard를 써준다. 이름은 google로
 	async loginGoogle(
-    @Req() req: Request & IOAuthUser, 
+    @Req() req: Request & IOAuthUser,
     @Res() res: Response	//Nest.js가 express를 기반으로 하기때문에 Request는 express에서 import한다.
   ) {
      //프로필을 받아온 다음, 로그인 처리해야하는 곳(auth.service.ts에서 선언해준다)
@@ -92,11 +90,11 @@ export class AuthController {	//클래스이름
 
 }
 
-~~~
+```
 
-`@UseGuards(AuthGuard("google"))` 이렇게 인증과정을 거쳐야하는 부분은 
+`@UseGuards(AuthGuard("google"))` 이렇게 인증과정을 거쳐야하는 부분은
 
-`src/commons/auth/jwt-social-google.strategy.ts` 라는 파일을 하나 만들고 
+`src/commons/auth/jwt-social-google.strategy.ts` 라는 파일을 하나 만들고
 
 이 passport인증과정을 거치는 ts파일을 하나 만들어준다
 
@@ -108,18 +106,21 @@ ts도 설치해줘야하기때문에 `yarn add --dev @types/passport-google-oaut
 
 (카카오 네이버도 각자만의 passport lib가 있기때문에 각각 다 설치해줘야한다)
 
-~~~ts
+```ts
 // jwt-social-google.strategy.ts
 
 import { PassportStrategy } from "@nestjs/passport";
 import { Strategy } from "passport-google-oauth20";
 
-export class JwtGoogleStrategy extends PassportStrategy(Strategy, "google") {	//UseGuards의 이름과 동일해야함
-  constructor() {	//constructor에서 성공하면 아래의 validate로 넘겨주고, 만약 실패하면 멈춰지고 에러 반환
-    super({	//자식의 constructor를 부모의 constructor에 넘기는 방법은 super를 사용하면 된다.
-      clientID: process.env.GOOGLE_CLIENT_ID,	//.env파일에 들어있음
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,	//.env파일에 들어있음
-      callbackURL: process.env.GOOGLE_CALLBACK_URL,	//.env파일에 들어있음
+export class JwtGoogleStrategy extends PassportStrategy(Strategy, "google") {
+  //UseGuards의 이름과 동일해야함
+  constructor() {
+    //constructor에서 성공하면 아래의 validate로 넘겨주고, 만약 실패하면 멈춰지고 에러 반환
+    super({
+      //자식의 constructor를 부모의 constructor에 넘기는 방법은 super를 사용하면 된다.
+      clientID: process.env.GOOGLE_CLIENT_ID, //.env파일에 들어있음
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET, //.env파일에 들어있음
+      callbackURL: process.env.GOOGLE_CALLBACK_URL, //.env파일에 들어있음
       scope: ["email", "profile"],
     });
   }
@@ -132,25 +133,20 @@ export class JwtGoogleStrategy extends PassportStrategy(Strategy, "google") {	//
     return {
       name: profile.displayName,
       email: profile.emails[0].value,
-      hashedPassword: '1234',
+      hashedPassword: "1234",
     };
   }
 }
+```
 
-~~~
-
-
-
-* `constructor` : 인증하는 부분
-* `validate` : 인증결과를 받는 부분
-
-
+- `constructor` : 인증하는 부분
+- `validate` : 인증결과를 받는 부분
 
 `auth.controller.ts`에서 보면 `this.authService.OAuthLogin({req, res});` 부분이 있는데
 
 `auth.service.ts` 파일에서 `OAuthLogin` 함수를 실행하라는 뜻이므로
 
-~~~ts
+```ts
 import { Injectable } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
 import { UsersService } from "../users/users.service";
@@ -161,45 +157,40 @@ import {
 
 @Injectable()
 export class AuthService {
-  constructor(
-    private readonly usersService: UsersService
-  ) {}
+  constructor(private readonly usersService: UsersService) {}
 
-  async OAuthLogin({req, res}){	
+  async OAuthLogin({ req, res }) {
     // 1. 회원조회
-    let user = await this.usersService.findOne({ email: req.user.email });	//user를 찾아서
-    
+    let user = await this.usersService.findOne({ email: req.user.email }); //user를 찾아서
+
     // 2, 회원가입이 안되어있다면? 자동회원가입
-    if (!user) user = await this.usersService.create({ ...req.user });	//user가 없으면 하나 만들고, 있으면 이 if문에 들어오지 않을거기때문에 이러나 저러나 user는 존재하는게 됨.
+    if (!user) user = await this.usersService.create({ ...req.user }); //user가 없으면 하나 만들고, 있으면 이 if문에 들어오지 않을거기때문에 이러나 저러나 user는 존재하는게 됨.
 
     // 3. 회원가입이 되어있다면? 로그인(AT, RT를 생성해서 브라우저에 전송)한다
     this.setRefreshToken({ user, res });
-    res.redirect(
-      "리다이렉트할 url주소"
-    );
+    res.redirect("리다이렉트할 url주소");
   }
 }
-
-~~~
+```
 
 이렇게 `controller`, `servce`에 등록을 해주었다면 `auth.module.ts`에도 등록해주어야한다.
 
-~~~ts
+```ts
 // auth.module.ts
 
-import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from '../users/entities/user.entity';
-import { UsersService } from '../users/users.service';
-import { AuthResolver } from './auth.resolver';
-import { AuthService } from './auth.service';
-import { JwtModule } from '@nestjs/jwt';
-import { JwtRefreshStrategy } from 'src/commons/auth/jwt-refresh.strategy';
-import { JwtAccessStrategy } from 'src/commons/auth/jwt-access.strategy';
-import { AuthController } from './auth.controller';
-import { JwtGoogleStrategy } from 'src/commons/auth/jwt-social-google.strategy';
-import { JwtNaverStrategy } from 'src/commons/auth/jwt-social-naver.strategy';
-import { JwtKakaoStrategy } from 'src/commons/auth/jwt-social-kakao.strategy';
+import { Module } from "@nestjs/common";
+import { TypeOrmModule } from "@nestjs/typeorm";
+import { User } from "../users/entities/user.entity";
+import { UsersService } from "../users/users.service";
+import { AuthResolver } from "./auth.resolver";
+import { AuthService } from "./auth.service";
+import { JwtModule } from "@nestjs/jwt";
+import { JwtRefreshStrategy } from "src/commons/auth/jwt-refresh.strategy";
+import { JwtAccessStrategy } from "src/commons/auth/jwt-access.strategy";
+import { AuthController } from "./auth.controller";
+import { JwtGoogleStrategy } from "src/commons/auth/jwt-social-google.strategy";
+import { JwtNaverStrategy } from "src/commons/auth/jwt-social-naver.strategy";
+import { JwtKakaoStrategy } from "src/commons/auth/jwt-social-kakao.strategy";
 
 @Module({
   imports: [
@@ -210,32 +201,32 @@ import { JwtKakaoStrategy } from 'src/commons/auth/jwt-social-kakao.strategy';
   ],
   providers: [
     JwtAccessStrategy, //accessToken
-    JwtRefreshStrategy,	//refreshToken
-    JwtGoogleStrategy,	//google소셜로그인
-    JwtNaverStrategy,	//naver소셜로그인 
-    JwtKakaoStrategy,	//kakao소셜로그인 
-    AuthResolver,	//resolver 주입
-    AuthService,	//service 주입
-    UsersService,	//user폴더의 service 주입
+    JwtRefreshStrategy, //refreshToken
+    JwtGoogleStrategy, //google소셜로그인
+    JwtNaverStrategy, //naver소셜로그인
+    JwtKakaoStrategy, //kakao소셜로그인
+    AuthResolver, //resolver 주입
+    AuthService, //service 주입
+    UsersService, //user폴더의 service 주입
   ],
   controllers: [
     AuthController, //컨트롤러 주입
   ],
 })
 export class AuthModule {}
-~~~
+```
 
 이렇게 등록을 해주면 docker로 띄울때 터미널에서 초록색으로
 
- `Mapped {/login/google, GET} route` 라고 뜨면 연결이 잘 된거다. 
+`Mapped {/login/google, GET} route` 라고 뜨면 연결이 잘 된거다.
 
 우선은 AT는 받지않고 RF만 받기로 했으니까
 
-브라우저에 개발자도구의 Application에 cookie안에 refresh Token이 생겼는지 확인하면 되고, 
+브라우저에 개발자도구의 Application에 cookie안에 refresh Token이 생겼는지 확인하면 되고,
 
 되었다면 잘 로그인된거라고 생각하면 된다.
 
-> *소셜로그인에서 RefreshToken 만 받아오는 이유?*
+> _소셜로그인에서 RefreshToken 만 받아오는 이유?_
 >
 > 원래는 자체 서비스에서 회원가입을 하게되면 accessToken(이하 AT )과 refreshToken(이하 RT)을 받아오는데
 >
@@ -245,15 +236,11 @@ export class AuthModule {}
 >
 > 그래서 RF만 넘겨주면 프엔개발자들이 이 RF을 받아서 restoreToken API로 AT를 재발급받아서 사용할수 있다.
 >
-> 그래서 RF만 받아와도 괜찮음! 
-
-
+> 그래서 RF만 받아와도 괜찮음!
 
 ---
 
 ## KAKAO, NAVER 로그인
-
-
 
 코드화 하기 전에 각 사이트의 개발자 사이트에서 설정해주는게 더 중요하다.
 
@@ -275,7 +262,7 @@ export class AuthModule {}
 
 우선은 [네이버개발자](https://developers.naver.com/main/) 사이트에 가서 내 어플리케이션 만들기를 진행한다.
 
-알아서 본인상태에 맞게 만들기. 
+알아서 본인상태에 맞게 만들기.
 
 그리고 `Application > 어플리케이션 등록 ` 에 가서 신청을 하면 된다.
 
@@ -349,13 +336,9 @@ export class AuthModule {}
 
 ---
 
-
-
-
-
 코드로직은 구글과 똑같다.
 
-~~~ts
+```ts
 // auth.controller.ts
 
 import { Controller, Get, Req, Res, UseGuards } from "@nestjs/common";
@@ -386,7 +369,7 @@ export class AuthController {
     @Req() req: Request & IOAuthUser, //
     @Res() res: Response
   ) {
-    this.authService.OAuthLogin({req, res});
+    this.authService.OAuthLogin({ req, res });
   }
 
   //-----------------------카카오 로그인-----------------------------//
@@ -396,7 +379,7 @@ export class AuthController {
     @Req() req: Request & IOAuthUser, //
     @Res() res: Response
   ) {
-    this.authService.OAuthLogin({req, res});
+    this.authService.OAuthLogin({ req, res });
   }
 
   //-----------------------네이버 로그인-----------------------------//
@@ -406,20 +389,18 @@ export class AuthController {
     @Req() req: Request & IOAuthUser, //
     @Res() res: Response
   ) {
-    this.authService.OAuthLogin({req, res});
+    this.authService.OAuthLogin({ req, res });
   }
 
-  @Get('favicon.ico')   
-  favicon(     
-    @Req() req: Request & IOAuthUser, //     
-    @Res() res: Response,   
-  ) {     
-    res.status(204).end();   
+  @Get("favicon.ico")
+  favicon(
+    @Req() req: Request & IOAuthUser, //
+    @Res() res: Response
+  ) {
+    res.status(204).end();
   }
-
 }
-
-~~~
+```
 
 <br>
 
@@ -431,9 +412,9 @@ export class AuthController {
 
 passport는 소셜미디어마다 다르기 때문에 다른 파일을 하나 만들어주어야한다.
 
-`jwt-social-kakao.strategy.ts` 
+`jwt-social-kakao.strategy.ts`
 
-~~~ts
+```ts
 import { PassportStrategy } from "@nestjs/passport";
 import { Strategy } from "passport-kakao";
 
@@ -443,7 +424,7 @@ export class JwtKakaoStrategy extends PassportStrategy(Strategy, "kakao") {
       clientID: process.env.KAKAO_CLIENT_ID,
       clientSecret: process.env.KAKAO_CLIENT_SECRET,
       callbackURL: process.env.KAKAO_CALLBACK_URL,
-      scope: ['account_email', 'profile_nickname']
+      scope: ["account_email", "profile_nickname"],
     });
   }
 
@@ -460,18 +441,17 @@ export class JwtKakaoStrategy extends PassportStrategy(Strategy, "kakao") {
     };
   }
 }
-
-~~~
-
-<br>
+```
 
 <br>
 
 <br>
 
-`jwt-social-naver.strategy.ts` 
+<br>
 
-~~~ts
+`jwt-social-naver.strategy.ts`
+
+```ts
 import { PassportStrategy } from "@nestjs/passport";
 import { Strategy } from "passport-naver";
 
@@ -480,11 +460,11 @@ export class JwtNaverStrategy extends PassportStrategy(Strategy, "naver") {
     super({
       clientID: process.env.NAVER_CLIENT_ID,
       clientSecret: process.env.NAVER_CLIENT_SECRET,
-      callbackURL: process.env.NAVER_CALLBACK_URL
+      callbackURL: process.env.NAVER_CALLBACK_URL,
     });
   }
 
-  validate(accessToken:string, refreshToken:string, profile:any) {
+  validate(accessToken: string, refreshToken: string, profile: any) {
     // console.log(accessToken);
     // console.log(refreshToken);
     // console.log(profile);
@@ -496,5 +476,4 @@ export class JwtNaverStrategy extends PassportStrategy(Strategy, "naver") {
     };
   }
 }
-~~~
-
+```

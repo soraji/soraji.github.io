@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "GCP mysql DBeaver 연결 / GCP mysql cli로 연결하기(google cloud shell)"
+title: "[ GCP ] GCP MySQL DBeaver 연결 / GCP MySQL cli로 연결하기(Google Cloud Shell)"
 categories: back
 comments: true
 ---

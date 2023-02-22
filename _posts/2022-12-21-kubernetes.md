@@ -1,15 +1,9 @@
 ---
 layout: post
-title:  "쿠버네티스로 배포하기 1편 (나의 nest.js 프로젝트 GCP에 올리기)"
+title: "[ K8s ] 쿠버네티스로 배포하기 1편 (나의 NestJS 프로젝트 GCP에 올리기)"
 categories: back
 comments: true
-
-
 ---
-
-
-
-
 
 <br>
 
@@ -49,7 +43,7 @@ aws, gcp, azure 들어오면 진짜 단어들이 다들 너무 어려워서 뭐�
 
 이 컨테이너들을 관리하는 것들이 파드라고 생각하면 된다.
 
->  파드란?
+> 파드란?
 >
 > 컨테이너가 모인 집합체의 단위.
 >
@@ -79,11 +73,11 @@ GCP에서 `클러스터 엔진 카테고리 > 클러스터` 로 들어간다.
 
 `만들기` 를 만들어서 `AutoPilot` 을 선택한다.
 
-standard로 선택하는 경우는 내가 쿠버네티스를 잘 알고있는경우, 
+standard로 선택하는 경우는 내가 쿠버네티스를 잘 알고있는경우,
 
-이 클러스터를 만들면 얼마만큼의 메모리, 얼마만큼의 CPU가 필요한지 등등 사전 정보를 알고있어서 
+이 클러스터를 만들면 얼마만큼의 메모리, 얼마만큼의 CPU가 필요한지 등등 사전 정보를 알고있어서
 
-아키텍쳐를 잘 짤 수 있을때 사용하는게 좋다. 
+아키텍쳐를 잘 짤 수 있을때 사용하는게 좋다.
 
 잘 모르면 그냥 오토파일럿 쓰자.. (·•᷄‎ࡇ•᷅ )
 
@@ -93,7 +87,7 @@ standard로 선택하는 경우는 내가 쿠버네티스를 잘 알고있는경
 
 유저의 접속량에 따라 노드의 갯수를 줄였다 늘였다 하는 기능이다.
 
-접속자가 없으면 필요없는 리소스 낭비를 방지하기 위해 노드를 없애고, 
+접속자가 없으면 필요없는 리소스 낭비를 방지하기 위해 노드를 없애고,
 
 접속자가 많으면 서버가 터지지 않게 노드를 늘린다.
 
@@ -117,8 +111,6 @@ standard로 선택하는 경우는 내가 쿠버네티스를 잘 알고있는경
 
 <br>
 
-
-
 <br>
 
 <br>
@@ -133,8 +125,8 @@ GCP와 연결하기전에 docker-compose.prod.yaml파일을 먼저 수정해서 
 
 왜냐면 이 push한 코드로 배포를 진행할거니까!!
 
-~~~yaml
-version: '3.7'
+```yaml
+version: "3.7"
 
 # 컴퓨터들
 services:
@@ -147,7 +139,7 @@ services:
       dockerfile: Dockerfile
     # volumes:
     #   - ./src:/myfolder/src
-    # ports: 
+    # ports:
     # env_file:
     #   - ./.env.prod
 
@@ -159,12 +151,11 @@ services:
   #     MYSQL_ROOT_PASSWORD: 'root'
   #   ports:
   #     - 3306:3306
+```
 
-~~~
+`image: asia.gcr.io/프로젝트ID/만들고싶은폴더이름:0.0` : 컨테이너 레지스트리에서 이미지를 지정한다
 
-`image: asia.gcr.io/프로젝트ID/만들고싶은폴더이름:0.0`  : 컨테이너 레지스트리에서 이미지를 지정한다 
-
-`0.0`은 Push를 할때마다 버전을 올려야한다. 숫자가 바뀌어야 무언가 바뀌었다는걸 gcp가 감지한다. 
+`0.0`은 Push를 할때마다 버전을 올려야한다. 숫자가 바뀌어야 무언가 바뀌었다는걸 gcp가 감지한다.
 
 숫자 안올리면 업데이트 안됨....!
 
@@ -174,16 +165,16 @@ services:
 
 주석처리한
 
-~~~yaml
+```yaml
 # 컴퓨터이름
-  # my-database:
-  #   image: mysql:latest
-  #   environment:
-  #     MYSQL_DATABASE: 'myproject'
-  #     MYSQL_ROOT_PASSWORD: 'root'
-  #   ports:
-  #     - 3306:3306
-~~~
+# my-database:
+#   image: mysql:latest
+#   environment:
+#     MYSQL_DATABASE: 'myproject'
+#     MYSQL_ROOT_PASSWORD: 'root'
+#   ports:
+#     - 3306:3306
+```
 
 이 부분은 로컬에서 돌리는게 아니기때문에 주석처리해줌
 
@@ -193,26 +184,26 @@ services:
 
 `ports`, `env_file` 전부 쿠버네티스에 따로 설정해주는 부분이 있기때문에 적어줄 필요가 없기 때문에 주석처리
 
-~~~yaml
+```yaml
 my-backend:
-    image: asia.gcr.io/프로젝트ID/만들고싶은폴더이름:0.0
-    platform: linux/x86_64
-    build:
-      context: .
-      dockerfile: Dockerfile
-~~~
+  image: asia.gcr.io/프로젝트ID/만들고싶은폴더이름:0.0
+  platform: linux/x86_64
+  build:
+    context: .
+    dockerfile: Dockerfile
+```
 
 이 부분을 push하는데, 명령어는
 
 `docker-compose -f docker-compose.prod.yaml build` 해주고
 
-`docker-compose -f docker-compose.prod.yaml push` 이다. 
+`docker-compose -f docker-compose.prod.yaml push` 이다.
 
 <br>
 
 🌟 push가 완료되는 순간, `asia.gcr.io/프로젝트ID/만들고싶은폴더이름:0.0` 이 경로를 찾아 빌드된 소스코드를 업로드한다.🌟
 
-확인하는 방법은 
+확인하는 방법은
 
 ![쿠버네티스](/assets/img/kubernetes/9.png)
 
@@ -254,7 +245,7 @@ VM인스턴스로 배포를 할때는 코드를 git에 올려서 git pull로 우
 
 ![쿠버네티스](/assets/img/kubernetes/6.png)
 
- `container registry` 에 올라온 컨테이너 이미지를 선택할 수 있게 된다.
+`container registry` 에 올라온 컨테이너 이미지를 선택할 수 있게 된다.
 
 가장 최근에 push한 이미지를 선택하고 환경변수를 설정해준다.
 
@@ -298,13 +289,13 @@ VM인스턴스로 배포했을때는 git에 .env파일이 올라가지 않기때
 
 <br>
 
-배포된 작업부하에 들어가면 `노출 중인 서비스` 의 `노출` 버튼을 클릭한다. 
+배포된 작업부하에 들어가면 `노출 중인 서비스` 의 `노출` 버튼을 클릭한다.
 
 ![쿠버네티스](/assets/img/kubernetes/11.png)
 
 여기서 서비스 유형을 선택해주어야 하는데,
 
-db처럼 외부에 공개하는게 위험하고, 클러스터 내부에서만 접속가능하게 해주려면 `클러스터 ip` 를, 
+db처럼 외부에 공개하는게 위험하고, 클러스터 내부에서만 접속가능하게 해주려면 `클러스터 ip` 를,
 
 외부에서도 접속 가능하게 하려면 `부하 분산기` 를 선택하면 된다.
 
@@ -342,7 +333,7 @@ db처럼 외부에 공개하는게 위험하고, 클러스터 내부에서만 �
 
 이때 사용하는 명령어가
 
- `yarn start:prod`  : 시작명령을 바꾸기. 이 명령어로는 `dist` 폴더안의 `main.js` 를 실행한다. (javascript실행)
+`yarn start:prod` : 시작명령을 바꾸기. 이 명령어로는 `dist` 폴더안의 `main.js` 를 실행한다. (javascript실행)
 
 `yarn install --production` : 데브디펜던시 말고 디펜던시만 설치함!
 
@@ -350,7 +341,7 @@ db처럼 외부에 공개하는게 위험하고, 클러스터 내부에서만 �
 
 그래서 `Dockerfile.prod` 라는 파일을 새로 하나 만들어서
 
-~~~dockerfile
+```dockerfile
 FROM node:14
 
 COPY ./package.json /myfolder/
@@ -362,16 +353,16 @@ COPY . /myfolder/
 
 RUN yarn build
 CMD yarn start:prod
-~~~
+```
 
-`RUN yarn build` 해줘야  dist폴더가 생성되니까.. 그래야지 main.js에 접근가능하니까..
+`RUN yarn build` 해줘야 dist폴더가 생성되니까.. 그래야지 main.js에 접근가능하니까..
 
 이렇게 바꾼 `Dockerfile.prod` 를 `docker-compose.prod.yaml` 파일에 적용한다.
 
-~~~yaml
+```yaml
 #docker-compose.prod.yaml
 
-version: '3.7'
+version: "3.7"
 
 services:
   my-backend:
@@ -380,9 +371,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.prod
-~~~
+```
 
- 이제 99% 끝남.
+이제 99% 끝남.
 
 근데 package.json을 보면 "build" 키의 값이 "nest build" 인걸 볼 수 있는데
 
@@ -390,19 +381,19 @@ services:
 
 근데 이 부분은 `devDependencies`에 있음
 
-그래서 `"@nestjs/schematics": "^9.0.0"`  이 부분만 `dependencies` 로 옮겨준다
+그래서 `"@nestjs/schematics": "^9.0.0"` 이 부분만 `dependencies` 로 옮겨준다
 
-> `package.json` 의 `script` 부분을 보면 
+> `package.json` 의 `script` 부분을 보면
 >
-> ~~~
+> ```
 > "scripts": {
 >     "prebuild": "rimraf dist",
 >     "build": "nest build",
-> ~~~
+> ```
 >
-> `prebuild` 와 `build` 부분이 있는데, 세트로 다닌다. 
+> `prebuild` 와 `build` 부분이 있는데, 세트로 다닌다.
 >
-> `prebuild`는 build전에 실행되는 명령어 인데, `prebuild` 의 값인 `"rimraf dist"` 이 부분은 
+> `prebuild`는 build전에 실행되는 명령어 인데, `prebuild` 의 값인 `"rimraf dist"` 이 부분은
 >
 > dist폴더를 삭제해 달라는 말임.
 >
@@ -412,7 +403,7 @@ services:
 
 이제 이렇게 vscode를 수정했으니
 
-`docker-compose -f docker-compose.prod.yaml build` 
+`docker-compose -f docker-compose.prod.yaml build`
 
 `docker-compose -f docker-compose.prod.yaml push` 로 다시 push해준다(prod.yaml파일의 버전 올려줘야한다!!!)
 
@@ -455,6 +446,3 @@ services:
 <br>
 
 <br>
-
-
-
