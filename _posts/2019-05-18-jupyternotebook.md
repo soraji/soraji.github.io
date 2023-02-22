@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[python jupyter notebook]주피터노트북 사용법"
+title: "[ Python ]주피터노트북 사용법"
 categories: back
 comments: true
 ---
@@ -14,8 +14,6 @@ Mode
   - 셀 내용 수정
   - 단축키 : enter
 
-
-
 Cell Style
 
 - code
@@ -25,20 +23,16 @@ Cell Style
   - 설명을 작성하는 셀 스타일
   - 단축키 : (명령모드) m
 
-
-
 Markdown
 
 - 텍스트 문서 양식을 편집하는 문법
   - 제목 : #
   - 인용 : >
-  - 리스트 : -, *
+  - 리스트 : -, \*
   - 코드 : `, ```
   - 링크 : `[title](link)`
   - 가로선 : ---
   - 강조 : **text**
-
-
 
 단축키
 

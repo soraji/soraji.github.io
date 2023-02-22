@@ -1,15 +1,9 @@
 ---
 layout: post
-title:  "쿠버네티스로 배포하기 2편 ( gcloud mysql과 연동, ssl인증서 생성 및 적용)"
+title: "[ K8s ] 쿠버네티스로 배포하기 2편 ( gcloud mysql과 연동, ssl인증서 생성 및 적용)"
 categories: back
 comments: true
-
-
 ---
-
-
-
-
 
 <br>
 
@@ -53,7 +47,7 @@ mysql로 디비를 만든다.
 
 `시작할 구성선택`에서는 `Development` (만약 `Production`을 선택하면 컴퓨터가 2대이기때문에 요금이 2배.....)
 
-`리전`은 `asia-northeast3` 
+`리전`은 `asia-northeast3`
 
 `영역가용성` 은 `단일영역`
 
@@ -93,7 +87,7 @@ mysql로 디비를 만든다.
 
 (만약 환경변수를 적어줘야할 일이 있다면 이곳에서 수정하면 된다.)
 
-이제 HOST부분을 연결해야하는데, 
+이제 HOST부분을 연결해야하는데,
 
 HOST부분은 SQL에서 확인하면 된다.
 
@@ -153,7 +147,7 @@ gui에서 확인하는 방법은 `작업부하` 에서 배포한 컨테이너에
 
 ![쿠버네티스](/assets/img/kubernetes/22.png)
 
-이렇게 갖고오거나 아니면 yaml파일에서 가져오는 방법이 있는데, 
+이렇게 갖고오거나 아니면 yaml파일에서 가져오는 방법이 있는데,
 
 명령어는 `kubectl get pods -o yaml` 이다.
 
@@ -167,11 +161,11 @@ gui에서 확인하는 방법은 `작업부하` 에서 배포한 컨테이너에
 
 이렇게 확인을 했으면 이제는 진짜 업데이트를 해보자 (제발하자 좀...( ༎ຶŎ༎ຶ ))
 
-명령어는 
+명령어는
 
-~~~
+```
 $ kubectl set image deployment/작업부하배포이름 야믈파일에서추출한pods사양=containerRegistry에등록한이미지이름
-~~~
+```
 
 이렇게이다.
 
@@ -187,9 +181,9 @@ $ kubectl set image deployment/작업부하배포이름 야믈파일에서추출
 
 그리고나서 제대로 업데이트가 되었는지 확인하려면
 
-~~~
+```
 $ kubectl get pods
-~~~
+```
 
 이 명령어를 쳐주면 되고,
 
@@ -209,15 +203,15 @@ $ kubectl get pods
 
 자 그럼 이제 새로 생성된(=업데이트된) pods가 잘 돌고있는지 확인해보자.
 
-잘 돌고 있는지 확인하려면 
+잘 돌고 있는지 확인하려면
 
-~~~
+```
 $ kubectl logs -f pods의NAME
-~~~
+```
 
 을 써주면 되는데
 
-예를 들어 
+예를 들어
 
 ![쿠버네티스](/assets/img/kubernetes/25.png)
 
@@ -235,9 +229,9 @@ $ kubectl logs -f pods의NAME
 
 배포된 컨테이너 가져오기
 
-~~~
+```
 $ kubectl get deployments
-~~~
+```
 
 ![쿠버네티스](/assets/img/kubernetes/26.png)
 
@@ -247,9 +241,9 @@ $ kubectl get deployments
 
 서비스 가져오기
 
-~~~
+```
 $ kubectl get services
-~~~
+```
 
 ![쿠버네티스](/assets/img/kubernetes/27.png)
 
@@ -273,7 +267,7 @@ $ kubectl get services
 
 내부ip를 설정함으로서 클러스터 안에있는 노드들끼리는 통신이 가능하도록 했다.
 
-클러스터에 접속할 수 있도록 외부ip를 설정하는것은 `서비스 및 수신`에서 `노출` 을 통해  가능하게 했다.
+클러스터에 접속할 수 있도록 외부ip를 설정하는것은 `서비스 및 수신`에서 `노출` 을 통해 가능하게 했다.
 
 잘 모르겠으면 1편의 [브라우저에서 배포한 nestjs에 접속할 수 있게 하기](https://soraji.github.io/back/2022/12/21/kubernetes/) 를 보면 될거임..
 
@@ -295,7 +289,7 @@ $ kubectl get services
 >
 > 밖으로 나가는것을 이그레스(`egress`)라고 한다
 
-인그레스는 `서비스 및 수신` 에서 설정할 수 있다. 
+인그레스는 `서비스 및 수신` 에서 설정할 수 있다.
 
 배포된 서비스를 클릭하면 `인그레스 만들기` 버튼이 활성화가 된다.
 
@@ -307,7 +301,7 @@ $ kubectl get services
 
 <br>
 
-`인그레스 만들기` 를 클릭하면 `Kubernetes 수신 만들기` 로 들어가지는데 
+`인그레스 만들기` 를 클릭하면 `Kubernetes 수신 만들기` 로 들어가지는데
 
 ![쿠버네티스](/assets/img/kubernetes/30.png)
 
@@ -319,7 +313,7 @@ $ kubectl get services
 
 ![쿠버네티스](/assets/img/kubernetes/31.png)
 
-`Frontend configuration` 에서 
+`Frontend configuration` 에서
 
 `프로토콜` 을 `https`로,
 
@@ -343,7 +337,7 @@ $ kubectl get services
 
 그리고 도메일은 본인이 구매한 도메인 주소를 작성한다.
 
-(도메인주소에 www를 넣으면 안됨. 본인이 구매한 도메인 이름만 넣을것..! 
+(도메인주소에 www를 넣으면 안됨. 본인이 구매한 도메인 이름만 넣을것..!
 
 예시에 있어서 www를 넣고 만들었는데 인증서발급 3일동안 안되서 삭제한다음에 다시 만들었더니 그제서야 됨... 🫠)
 
@@ -363,7 +357,7 @@ $ kubectl get services
 
 이제는 `Host and path rules` 을 설정해주어야 한다.
 
-`호스트 및 경로 규칙 구성`  에서 어떤 부하분산과 연결시켜줄건지 물어보는 항목이다.
+`호스트 및 경로 규칙 구성` 에서 어떤 부하분산과 연결시켜줄건지 물어보는 항목이다.
 
 내 nest.js 프로젝트에 ssl을 입히는거이기때문에
 
@@ -387,11 +381,11 @@ $ kubectl get services
 
 <br>
 
-TMI ) 
+TMI )
 
 회사다녔을때 ssl적용 내가 했는데 나는 물리서버를 가지고 있는 회사였어서 ssl인증서를 구매하는 방법밖에 없었다.
 
-그때 무료로 하는 방법 엄청 찾아봤었는데.. 
+그때 무료로 하는 방법 엄청 찾아봤었는데..
 
 클라우드는 무료로 하는게 가능하구나.. 하나 또 배웠고, 신기했던 날.
 
@@ -405,8 +399,6 @@ TMI )
 
 ---
 
-
-
 인그레스를 확인하려면 `서비스 및 수신` 안에 숨어있다....!
 
 ![쿠버네티스](/assets/img/kubernetes/36.png)
@@ -419,11 +411,11 @@ TMI )
 
 에러가 나는 이유를 확인해보면(확인 솔직히 안해도됨. 그냥 그렇구나 보면 됨)
 
-`All backend services are in UNHEALTHY state` 에러가 나는 이유는 
+`All backend services are in UNHEALTHY state` 에러가 나는 이유는
 
 보면 경로가 `'/'` 로 되어있다.
 
- `HealthChecker` 가 요청을 했을때 response가 200을 받아와야 '아 얘가 살아있구나'를 로드밸런스에 알려주는데
+`HealthChecker` 가 요청을 했을때 response가 200을 받아와야 '아 얘가 살아있구나'를 로드밸런스에 알려주는데
 
 우리가 배포한 nest.js프로젝트의 엔드포인트에 `/` 가 없으니 받아오는 값이 없어서 죽었다고 생각하는것이다.
 
@@ -431,25 +423,25 @@ TMI )
 
 `controller` 가 restAPI를 만드는 곳이므로 `app.module.ts` 의 형제 파일로 `app.controller.ts` 를 하나 만들어준다.
 
-~~~ts
+```ts
 //app.controller.ts
 
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get } from "@nestjs/common";
 
 @Controller()
 export class AppController {
-  @Get('/')
+  @Get("/")
   getHello(): string {
     return "상태확인완료";
   }
 }
-~~~
+```
 
 이렇게 엔드포인트가 `/`인 restAPI를 만들어주고
 
- `app.module.ts` 에 추가해준다.
+`app.module.ts` 에 추가해준다.
 
-~~~ts
+```ts
 //app.module.ts
 
 import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
@@ -460,19 +452,12 @@ import { ConfigModule } from "@nestjs/config";
 import { AppController } from "./app.controller";
 
 @Module({
-  imports: [
-    ...중략
-  ],
-  providers: [
-		...중략
-  ],
-  controllers: [AppController],	//추가
+  imports: [...중략],
+  providers: [...중략],
+  controllers: [AppController], //추가
 })
 export class AppModule {}
-
-~~~
-
-
+```
 
 로컬에서 돌려보면 이런식으로 맵핑된걸 볼 수 있다.
 
@@ -486,15 +471,15 @@ export class AppModule {}
 
 <br>
 
-자..  여기서 끝이 아니에요... (   ˙ỏ˙  )
+자.. 여기서 끝이 아니에요... ( ˙ỏ˙ )
 
 [1편에서 했던](https://soraji.github.io/back/2022/12/21/kubernetes/) 코드 push하고 (docker-compose.prod.yaml 버전 올리고 push)
 
 2편의 **이미 실행중인 클러스터에 새롭게 push된 코드를 반영하도록 update해주기** 에서 했던 명령어로
 
-~~~
+```
 $ kubectl set image deployment/작업부하배포이름 야믈파일에서추출한pods사양=containerRegistry에등록한이미지이름
-~~~
+```
 
 로 다시 업데이트를 해줘야지 지금 방금 잘 mapping된게 반영이 된다.
 

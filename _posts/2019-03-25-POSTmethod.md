@@ -1,15 +1,11 @@
 ---
 layout: post
-title:  "[java] java에서 POST 방식으로 response가져오기2"
+title: "[ Java ] java에서 POST 방식으로 response가져오기2"
 categories: back
 comments: true
-
-
 ---
 
-
-
-~~~
+```
 //파라미터를 제외한 타겟url
 URL url = new URL("타겟url");
 
@@ -37,24 +33,20 @@ hConn.connect();
 StringBuffer resultb = new StringBuffer();
 BufferedReader in = null;
 
-String inputLine;		
+String inputLine;
 in = new BufferedReader(new InputStreamReader(hConn.getInputStream(),"utf-8"));
 while ((inputLine = in.readLine()) != null) {
-resultb.append(inputLine);		
+resultb.append(inputLine);
 resultb.append("\n");
 }
 in.close();
 
 String result = resultb.toString();
-~~~
-
-
-
-
+```
 
 POST 방식은 GET 방식과 달리, 데이터 전송을 기반으로 한 요청 메서드이다.
 
-GET방식은 URL에 데이터를 붙여서 보내는 반면, POST방식은 URL에 붙여서 보내지 않고 BODY에다가 데이터를 넣어서 보낸다.  따라서, 헤더필드중 BODY의 데이터를 설명하는 Content-Type이라는 헤더 필드가 들어가고 어떤 데이터 타입인지 명시한다.
+GET방식은 URL에 데이터를 붙여서 보내는 반면, POST방식은 URL에 붙여서 보내지 않고 BODY에다가 데이터를 넣어서 보낸다. 따라서, 헤더필드중 BODY의 데이터를 설명하는 Content-Type이라는 헤더 필드가 들어가고 어떤 데이터 타입인지 명시한다.
 
 컨텐츠 타입으로는 여러가지가 있지만, 몇가지를 적자면,
 
@@ -76,12 +68,10 @@ GET방식은 URL에 데이터를 붙여서 보내는 반면, POST방식은 URL�
 
 자바와 같이 oop 프로그래밍에서는 BODY에 데이터를 InputStream/OutputStream 클래스를 통해서 읽고/쓰고 한다.
 
-출처: 
+출처:
 
 https://mommoo.tistory.com/60
 
- [개발자로 홀로 서기]
-
-
+[개발자로 홀로 서기]
 
 ---

@@ -1,26 +1,20 @@
 ---
 layout: post
-title:  "Classic ASP JSON형태로 데이터가져와서 1년달력만들기"
-subtitle:   "etc"
+title: "[ ASP ] Classic ASP JSON형태로 데이터가져와서 1년달력만들기"
+subtitle: "etc"
 categories: back
 comments: true
-
-
 ---
 
+기술블로그를 하면서 느끼는점은, 개발자들은 물론 구글의 도움도 많이 받지만 틀린정보가 있다고해서 귀찮아한다거나
 
+왜 제대로 된 정보가 없냐며 탓을 할 문제는 전혀 아니라는것이다. 왜냐면, 물론 맞는 정보면 더할나위 없이 좋겠지만
 
-
-
-기술블로그를 하면서 느끼는점은, 개발자들은 물론 구글의 도움도 많이 받지만 틀린정보가 있다고해서 귀찮아한다거나 
-
-왜 제대로 된 정보가 없냐며 탓을 할 문제는 전혀 아니라는것이다. 왜냐면, 물론 맞는 정보면 더할나위 없이 좋겠지만 
-
-보통은 본인의 기억을 정리하기 위해 적어놓는것이고 그런 글들도 직접 코딩해보고 테스트해봐야하는 것들은 순전히 
+보통은 본인의 기억을 정리하기 위해 적어놓는것이고 그런 글들도 직접 코딩해보고 테스트해봐야하는 것들은 순전히
 
 개발자의 몫이기 때문이다.
 
-이 말을 하는건 내가 그랬기 때문이닼ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ... asp정보를 찾고싶은데 온갖거로 
+이 말을 하는건 내가 그랬기 때문이닼ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ... asp정보를 찾고싶은데 온갖거로
 
 테스트해봤는데 다 틀린정보였어서 짜증이 났지만 그걸 짜증내서 뭐하며 그냥 힌트만 얻는걸로 족해야하지 않겠나?
 
@@ -28,48 +22,36 @@ comments: true
 
 하지만 나같이 삽질하는 사람이 조금이라도 시간을 아끼길 바라면서..흑흑
 
-
-
-
-
 일을 하면서 정기적으로 매년마다 처리해야하는 일들이 일정하게 있는 편들이라 (예를들어 4월에는 뭐, 6월에는 뭐, 7월애는 뭐)
 
 1년일정을 한눈에 볼 수 있는 그래프를 만들고싶었다.
 
 가장 쉽게 생각할수있는 디자인은 깃허브의 컨트리뷰션 그래프같은것!
 
-
-
-깃헙그래프를 보면 한눈에 일년의 과정들이 눈에 들어오고 그 내용을 보려면 그 칸을 클릭해보면 되기에 
+깃헙그래프를 보면 한눈에 일년의 과정들이 눈에 들어오고 그 내용을 보려면 그 칸을 클릭해보면 되기에
 
 일정관리하기에 편할것 같다는 생각이 들어서 만들어보려고 했다.
-
-
 
 뭐 결과물은 아래처럼...(있어보이게 블러처리하고 싶었지만 귀차나씀)
 
 ![](/assets/img/calendar.PNG)
 
-기능은 
+기능은
 
-1. 저 색깔box를 클릭하면 상세정보를 보여주고 
+1. 저 색깔box를 클릭하면 상세정보를 보여주고
 2. 저 box가 아닌곳에 mouseover가 되면 +가 되면서 일정을 추가할수있게 한다.
 3. 1년달력으로 날짜가 유효하지 않은곳은 빗금을 쳐서 표시가 되게 한다.(ex.2월30일)
 4. 윤년체크한다.
 
-
-
-우선은 내가 사용하고 있는 스택은 classic ASP이고, 서버사이드스크립트이다.  DB와 보통 연결해서 바로 가져오는데 
+우선은 내가 사용하고 있는 스택은 classic ASP이고, 서버사이드스크립트이다. DB와 보통 연결해서 바로 가져오는데
 
 이번에는 한번 JSON으로 받아오기로 함
 
-아무래도 JSON으로 받아오면 데이터의 이동만 있기때문에 Ajax를 사용할때 좀더 편리하기 때문에 
+아무래도 JSON으로 받아오면 데이터의 이동만 있기때문에 Ajax를 사용할때 좀더 편리하기 때문에
 
 frame을 더이상 사용하지 않을 수 있겠다는 생각에 지금 프로젝트를 시작하게 되었다.
 
-
-
-우선 ASP에서 json을 지원해주고 있지는 않지만 이것저것 찾아보니 누가 만들어놓은 클래스같은 것들이 꽤나 있었다. 
+우선 ASP에서 json을 지원해주고 있지는 않지만 이것저것 찾아보니 누가 만들어놓은 클래스같은 것들이 꽤나 있었다.
 
 그런데 다들 너무 중구난방임.
 
@@ -77,15 +59,13 @@ frame을 더이상 사용하지 않을 수 있겠다는 생각에 지금 프로�
 
 한 500번은 try해본것 같다.
 
-
-
-우선 그러니까 필요한 라이브러리asp에는 
+우선 그러니까 필요한 라이브러리asp에는
 
 1. JSON.asp
 2. json.objectClass.asp
 3. aspJSON.asp
 
-이 3가지가 있다. 
+이 3가지가 있다.
 
 1번의 경우에는 new JSON으로 인스턴트를 만들때 사용된다.
 
@@ -93,35 +73,23 @@ frame을 더이상 사용하지 않을 수 있겠다는 생각에 지금 프로�
 
 3번은 DB로부터 가져온 데이터들을 for문 돌릴때 필요하다.
 
-
-
 저 위의 파일은 아래에다가 코드로 첨부해야지(뭔가 첨부파일로 첨부하면 다운받기 싫음)
 
-굉장히 많은 asp파일들이 떠다닌다. json2.asp / json2.js / json2.min.js 어쩌구저쩌구 그걸 활용해볼수도 있겠지만 
+굉장히 많은 asp파일들이 떠다닌다. json2.asp / json2.js / json2.min.js 어쩌구저쩌구 그걸 활용해볼수도 있겠지만
 
 내 경우에는 아무것도 안됐었고 에러만 뿜어댐
-
-
 
 되는건 저 3가지 짬뽕해야지만 에러없이 데이터를 가져올 수 있었다.
 
 우선 내가 웹서버에 뿌리는 코드는 calendar.asp인데
 
-
-
 ```
-Response.LCID = 1046 
+Response.LCID = 1046
 ```
-
-
 
 이게 코드를 추가하는게 중요한것 같았다(타임설정해주는 건데 왜 중요한건지 모르겠지만 여튼 저거 없으면 에러뿜음).
 
-  json.objectClass.asp인클루드하고 LCID없으니까 에러뿜던데.. 
-
-
-
-
+json.objectClass.asp인클루드하고 LCID없으니까 에러뿜던데..
 
 asp로 가져오긴 했지만 최대한 asp를 안쓰고 js로 만들어보려고했다.
 
@@ -131,64 +99,57 @@ asp로 가져오긴 했지만 최대한 asp를 안쓰고 js로 만들어보려�
 
 다시 node.js와 vue 강의를 듣고있다는 사실이다. (욕심이 너무 많음)
 
-여튼, 더 자세한 사항은 코드 뜯어서 분석해보길... 
+여튼, 더 자세한 사항은 코드 뜯어서 분석해보길...
 
 이정도 적어놓으면 나중에 내 기억이 기억할거라 믿으면서...(과연)
-
-
-
-
 
 calendar.asp가 로딩되면 script가 실행되면서 callingajax.asp를 호출한다.
 
 그 callingajax에서 db내용을 json으로 바꿔주고 그 바꿔진 json데이터를 ajax success안으로 가져오는것임.
 
-### calendar.asp 
+### calendar.asp
 
 ```asp
-<body topmargin="10" leftmargin="15" onload="fetchJson()">    
+<body topmargin="10" leftmargin="15" onload="fetchJson()">
 ```
 
 ### calendar.asp의 script
 
-~~~javascript
+```javascript
 function fetchJson() {
-    var k = 0;
-    var allData = { "k": k };		
+  var k = 0;
+  var allData = { k: k };
 
-    $.ajax({
-        type : 'POST',
-        url : 'callingajax.asp',
-        data: allData,
-        dataType : 'json',
+  $.ajax({
+    type: "POST",
+    url: "callingajax.asp",
+    data: allData,
+    dataType: "json",
 
-        success : function(result){
-            console.log(result.datalist);
-            for(i=1; i<result.datalist.length; i++){
-                
-                gubun = result.datalist[i].gubun;
-                subject = result.datalist[i].subject;
-                contents = result.datalist[i].contents;
-                date1 = result.datalist[i].date1;
-                thisyear = result.datalist[i].thisyear;
-                ryn = result.datalist[i].ryn;
-                url = result.datalist[i].url;
+    success: function (result) {
+      console.log(result.datalist);
+      for (i = 1; i < result.datalist.length; i++) {
+        gubun = result.datalist[i].gubun;
+        subject = result.datalist[i].subject;
+        contents = result.datalist[i].contents;
+        date1 = result.datalist[i].date1;
+        thisyear = result.datalist[i].thisyear;
+        ryn = result.datalist[i].ryn;
+        url = result.datalist[i].url;
 
-                console.log('subject'+subject);
-            }
-        },
-        error : function(){
-            alert('failed to fetch json data!');
-        }
-    });
+        console.log("subject" + subject);
+      }
+    },
+    error: function () {
+      alert("failed to fetch json data!");
+    },
+  });
 }
-~~~
-
-
+```
 
 ### callingajax.asp
 
-~~~asp
+```asp
 <%
 Response.CharSet="euc-kr"
 Session.codepage="949"
@@ -196,11 +157,11 @@ Response.codepage="949"
 Response.ContentType="text/html;charset=euc-kr"
 %>
 <%
-Response.LCID = 1046 
+Response.LCID = 1046
 %>
 <!--#includes file="../../include/dbconnect.asp"-->
 
-<!--#includes file="include/JSON.asp" --> 
+<!--#includes file="include/JSON.asp" -->
 <!--#includes file="include/json.objectClass.asp"-->
 <!--#includes file="include/aspJSON.asp" -->
 <%
@@ -212,7 +173,7 @@ Set List = Server.CreateObject("ADODB.Recordset")
 sqlview = "select * from calendar order by date1"
 
 List.Open sqlview, dbCon, 1
-ListCount = List.RecordCount 
+ListCount = List.RecordCount
 
 Set caljson = new JSON  'JSON.asp가 필요함
 Set rs = dbCon.Execute(sqlview)
@@ -230,15 +191,11 @@ oJSON.loadJSON(List_jsonString)
 
 Response.write List_jsonString
 %>
-~~~
+```
 
-
-
-------
+---
 
 ### JSON.ASP
-
-
 
 ```asp
 <%
@@ -259,7 +216,7 @@ Response.write List_jsonString
 ''                  'simple number
 ''                  output = (new JSON)("myNum", 2, false)
 ''                  'generates {"myNum": 2}
-''                                      
+''
 ''                  'array with different datatypes
 ''                  output = (new JSON)("anArray", array(2, "x", null), true)
 ''                  'generates "anArray": [2, "x", null]
@@ -275,25 +232,25 @@ class JSON
 
     'private members
     private output, innerCall
-    
+
     'public members
     public toResponse       ''[bool] should the generated representation be written directly to the response (using <em>response.write</em>)? default = false
     public recordsetPaging  ''[bool] indicates if only the current page should be processed on paged recordsets.
                             ''e.g. would return only 10 records if <em>RS.pagesize</em> is set to 10. default = false (means that always all records are processed)
-    
+
     '**********************************************************************************************************
-    '* constructor 
+    '* constructor
     '**********************************************************************************************************
     public sub class_initialize()
         newGeneration()
         toResponse = false
         recordsetPaging = false
     end sub
-    
+
     '******************************************************************************************
     '' @SDESCRIPTION:   STATIC! takes a given string and makes it JSON valid
     '' @DESCRIPTION:    all characters which needs to be escaped are beeing replaced by their
-    ''                  unicode representation according to the 
+    ''                  unicode representation according to the
     ''                  RFC4627#2.5 - http://www.ietf.org/rfc/rfc4627.txt?number=4627
     '' @PARAM:          val [string]: value which should be escaped
     '' @RETURN:         [string] JSON valid string
@@ -322,7 +279,7 @@ class JSON
             escape = escape & currentDigit
         next
     end function
-    
+
     '******************************************************************************************************************
     '' @SDESCRIPTION:   generates a representation of a name value pair in JSON grammer
     '' @DESCRIPTION:    It generates a name value pair which is represented as <em>{"name": value}</em> in JSON.
@@ -373,12 +330,12 @@ class JSON
         generateValue(val)
         if not nested and not isEmpty(name) then write("}")
         toJSON = output
-        
+
         if innerCall = 0 then newGeneration()
     end function
-    
+
     '******************************************************************************************************************
-    '* generate 
+    '* generate
     '******************************************************************************************************************
     private function generateValue(val)
         if isNull(val) then
@@ -429,9 +386,9 @@ class JSON
         end if
         generateValue = output
     end function
-    
+
     '******************************************************************************************************************
-    '* generateArray 
+    '* generateArray
     '******************************************************************************************************************
     private sub generateArray(val)
         dim item, i
@@ -445,9 +402,9 @@ class JSON
         next
         write("]")
     end sub
-    
+
     '******************************************************************************************************************
-    '* generateDictionary 
+    '* generateDictionary
     '******************************************************************************************************************
     private sub generateDictionary(val)
         innerCall = innerCall + 1
@@ -466,9 +423,9 @@ class JSON
         write("}")
         innerCall = innerCall - 1
     end sub
-    
+
     '******************************************************************************************************************
-    '* generateRecordset 
+    '* generateRecordset
     '******************************************************************************************************************
     private sub generateRecordset(val)
         dim i, curRow
@@ -490,9 +447,9 @@ class JSON
         wend
         write("]")
     end sub
-    
+
     '******************************************************************************************************************
-    '* generateObject 
+    '* generateObject
     '******************************************************************************************************************
     private sub generateObject(val)
         dim props
@@ -508,39 +465,39 @@ class JSON
             write("""" & escape(typename(val)) & """")
         end if
     end sub
-    
+
     '******************************************************************************************************************
-    '* newGeneration 
+    '* newGeneration
     '******************************************************************************************************************
     private sub newGeneration()
         output = empty
         innerCall = 0
     end sub
-    
+
     '******************************************************************************************
-    '* JsonEscapeSquence 
+    '* JsonEscapeSquence
     '******************************************************************************************
     private function escapequence(digit)
         escapequence = "\u00" + right(padLeft(hex(ascw(digit)), 2, 0), 2)
     end function
-    
+
     '******************************************************************************************
-    '* padLeft 
+    '* padLeft
     '******************************************************************************************
     private function padLeft(value, totalLength, paddingChar)
         padLeft = right(clone(paddingChar, totalLength) & value, totalLength)
     end function
-    
+
     '******************************************************************************************
-    '* clone 
+    '* clone
     '******************************************************************************************
     private function clone(byVal str, n)
         dim i
         for i = 1 to n : clone = clone & str : next
     end function
-    
+
     '******************************************************************************************
-    '* write 
+    '* write
     '******************************************************************************************
     private sub write(val)
         if toResponse then
@@ -554,17 +511,9 @@ end class
 %>
 ```
 
-
-
-
-
-
-
-------
+---
 
 ### json.objectClass.asp
-
-
 
 ```asp
 <%
@@ -588,17 +537,17 @@ class JSONobject
     dim i_debug, i_depth, i_parent
     dim i_properties, i_version, i_defaultPropertyName
     private vbback
-    
+
     ' Set to true to show the internals of the parsing mecanism
     public property get debug
         debug = i_debug
     end property
-    
+
     public property let debug(value)
         i_debug = value
     end property
 
-    
+
     ' Gets/sets the default property name generated when loading recordsets and arrays (default "data")
     public property get defaultPropertyName
         defaultPropertyName = i_defaultPropertyName
@@ -613,25 +562,25 @@ class JSONobject
     public property get depth
         depth = i_depth
     end property
-    
-    
+
+
     ' The property pairs ("name": "value" - pairs)
     public property get pairs
         pairs = i_properties
     end property
-    
-    
+
+
     ' The parent object
     public property get parent
         set parent = i_parent
     end property
-    
+
     public property set parent(value)
         set i_parent = value
         i_depth = i_parent.depth + 1
     end property
-    
-    
+
+
 
     ' Constructor and destructor
     private sub class_initialize()
@@ -639,49 +588,49 @@ class JSONobject
         i_depth = 0
         i_debug = false
         i_defaultPropertyName = JSON_DEFAULT_PROPERTY_NAME
-        
+
         set i_parent = nothing
         redim i_properties(-1)
-        
+
         vbback = Chr(8)
     end sub
-    
+
     private sub class_terminate()
         dim i
         for i = 0 to ubound(i_properties)
             set i_properties(i) = nothing
         next
-        
+
         redim i_properties(-1)
     end sub
-    
-    
+
+
     ' Parse a JSON string and populate the object
     public function parse(byval strJson)
         dim regex, i, size, char, prevchar, quoted
         dim mode, item, key, value, openArray, openObject
         dim actualLCID, tmpArray, tmpObj, addedToArray
         dim root, currentObject, currentArray
-        
+
         log("Load string: """ & strJson & """")
-        
+
         ' Store the actual LCID and use the en-US to conform with the JSON standard
         actualLCID = Response.LCID
         Response.LCID = 1033
-        
+
         strJson = trim(strJson)
-        
+
         size = len(strJson)
-        
+
         ' At least 2 chars to continue
         if size < 2 then err.raise JSON_ERROR_PARSE, TypeName(me), "Invalid JSON string to parse"
-        
+
         ' Init the regex to be used in the loop
         set regex = new regexp
         regex.global = true
         regex.ignoreCase = true
         regex.pattern = "\w"
-        
+
         ' setup initial values
         i = 0
         set root = me
@@ -689,75 +638,75 @@ class JSONobject
         mode = "init"
         quoted = false
         set currentObject = root
-        
+
         ' main state machine
         do while i < size
             i = i + 1
             char = mid(strJson, i, 1)
-            
+
             ' root, object or array start
             if mode = "init" then
                 log("Enter init")
-                
+
                 ' if we are in root, clear previous object properties
                 if key = JSON_ROOT_KEY and TypeName(currentArray) <> "JSONarray" then redim i_properties(-1)
-                
+
                 ' Init object
                 if char = "{" then
                     log("Create object<ul>")
-                    
+
                     if key <> JSON_ROOT_KEY or TypeName(root) = "JSONarray" then
                         ' creates a new object
                         set item = new JSONobject
                         set item.parent = currentObject
-                        
+
                         addedToArray = false
-                        
+
                         ' Object is inside an array
                         if TypeName(currentArray) = "JSONarray" then
                             if currentArray.depth > currentObject.depth then
                                 ' Add it to the array
                                 set item.parent = currentArray
                                 currentArray.Push item
-                                
+
                                 addedToArray = true
 
                                 log("Added to the array")
                             end if
                         end if
-                        
+
                         if not addedToArray then
                             currentObject.add key, item
                             log("Added to parent object: """ & key & """")
                         end if
-                                                
+
                         set currentObject = item
                     end if
-                    
+
                     openObject = openObject + 1
                     mode = "openKey"
-                    
+
                 ' Init Array
                 elseif char = "[" then
                     log("Create array<ul>")
-                    
+
                     set item = new JSONarray
-                    
+
                     addedToArray = false
-                    
+
                     ' Array is inside an array
                     if isobject(currentArray) and openArray > 0 then
                         if currentArray.depth > currentObject.depth then
                             ' Add it to the array
                             set item.parent = currentArray
                             currentArray.Push item
-                            
+
                             addedToArray = true
-                            
+
                             log("Added to parent array")
                         end if
                     end if
-                    
+
                     if not addedToArray then
                         set item.parent = currentObject
                         currentObject.add key, item
@@ -768,12 +717,12 @@ class JSONobject
                         set root = item
                         log("Set as root")
                     end if
-                    
+
                     set currentArray = item
                     openArray = openArray + 1
                     mode = "openValue"
                 end if
-            
+
             ' Init a key
             elseif mode = "openKey" then
                 key = ""
@@ -785,7 +734,7 @@ class JSONobject
                     mode = "next"
                     i = i - 1 ' we backup one char to make the next iteration get the closing bracket
                 end if
-            
+
             ' Fill in the key until finding a double quote "
             elseif mode = "closeKey" then
                 ' If it finds a non scaped quotation, change to value mode
@@ -795,45 +744,45 @@ class JSONobject
                 else
                     key = key & char
                 end if
-            
+
             ' Wait until a colon char (:) to begin the value
             elseif mode = "preValue" then
                 if char = ":" then
                     mode = "openValue"
                     log("Open value for """ & key & """")
                 end if
-            
+
             ' Begining of value
             elseif mode = "openValue" then
                 value = ""
-                
+
                 ' If the next char is a closing square barcket (]), its closing an empty array
                 if char = "]" then
                     log("Closing empty array")
                     quoted = false
                     mode = "next"
                     i = i - 1 ' we backup one char to make the next iteration get the closing bracket
-                
+
                 ' If it begins with a double quote, its a string value
                 elseif char = """" then
                     log("Open string value")
                     quoted = true
                     mode = "closeValue"
-                
+
                 ' If it begins with open square bracket ([), its an array
                 elseif char = "[" then
                     log("Open array value")
                     quoted = false
                     mode = "init"
                     i = i - 1 ' we backup one char to init with '['
-                
+
                 ' If it begins with open a bracket ({), its an object
                 elseif char = "{" then
                     log("Open object value")
                     quoted = false
                     mode = "init"
                     i = i - 1 ' we backup one char to init with '{'
-                    
+
                 else
                     ' If its a number, start a numeric value
                     if regex.pattern <> "\d" then regex.pattern = "\d"
@@ -845,7 +794,7 @@ class JSONobject
                         if prevchar = "-" then
                             value = prevchar & char
                         end if
-                        
+
                     ' special values: null, true, false and undefined
                     elseif char = "n" or char = "t" or char = "f" or char = "u" then
                         log("Open special value")
@@ -854,14 +803,14 @@ class JSONobject
                         mode = "closeValue"
                     end if
                 end if
-            
+
             ' Fill in the value until finish
             elseif mode = "closeValue" then
                 if quoted then
                     if char = """" and prevchar <> "\" then
                         log("Close string value: """ & value & """")
                         mode = "addValue"
-                        
+
                     ' special and escaped chars
                     elseif prevchar = "\" then
                         select case char
@@ -890,7 +839,7 @@ class JSONobject
                                 else
                                     value = value & char
                                 end if
-                            
+
                             case else
                                 value = value & char
                         end select
@@ -905,12 +854,12 @@ class JSONobject
                         if value = "true" or value = "false" or value = "null" or value = "undefined" then mode = "addValue"
                     else
                         char = lcase(char)
-                        
+
                         ' If is a numeric char
                         if regex.pattern <> "\d" then regex.pattern = "\d"
                         if regex.test(char) then
                             value = value & char
-                        
+
                         ' If it's not a numeric char, but the prev char was a number
                         ' used to catch separators and special numeric chars
                         elseif regex.test(prevchar) or prevchar = "e" then
@@ -928,13 +877,13 @@ class JSONobject
                         end if
                     end if
                 end if
-            
+
             ' Add the value to the object or array
             elseif mode = "addValue" then
                 if key <> "" then
                     dim useArray
                     useArray = false
-                    
+
                     if not quoted then
                         if isNumeric(value) then
                             log("Value converted to number")
@@ -944,39 +893,39 @@ class JSONobject
                             value = eval(value)
                         end if
                     end if
-                    
+
                     quoted = false
-                    
+
                     ' If it's inside an array
                     if openArray > 0 and isObject(currentArray) then
                         useArray = true
-                        
+
                         ' If it's a property of an object that is inside the array
                         ' we add it to the object instead
                         if isObject(currentObject) then
                             if currentObject.depth >= currentArray.depth + 1 then useArray = false
                         end if
-                        
+
                         ' else, we add it to the array
                         if useArray then
                             tmpArray = currentArray.items
                             ArrayPush tmpArray, value
-                            
+
                             currentArray.items = tmpArray
-                            
+
                             log("Value added to array: """ & key & """: " & value)
                         end if
                     end if
-                    
+
                     if not useArray then
                         currentObject.add key, value
                         log("Value added: """ & key & """")
                     end if
                 end if
-                
+
                 mode = "next"
                 i = i - 1
-            
+
             ' Change the current mode according to the current state
             elseif mode = "next" then
                 if char = "," then
@@ -997,19 +946,19 @@ class JSONobject
                         log("New key")
                         mode = "openKey"
                     end if
-                
+
                 elseif char = "]" then
                     log("Close array</ul>")
-                    
+
                     ' If it's and open array, we close it and set the current array as its parent
                     if isobject(currentArray.parent) then
                         if TypeName(currentArray.parent) = "JSONarray" then
                             set currentArray = currentArray.parent
-                        
+
                         ' if the parent is an object
                         elseif TypeName(currentArray.parent) = "JSONobject" then
                             set tmpObj = currentArray.parent
-                            
+
                             ' we search for the next parent array to set the current array
                             while isObject(tmpObj) and TypeName(tmpObj) = "JSONobject"
                                 if isObject(tmpObj.parent) then
@@ -1018,61 +967,61 @@ class JSONobject
                                     tmpObj = tmpObj.parent
                                 end if
                             wend
-                            
+
                             set currentArray = tmpObj
                         end if
                     else
                         currentArray = currentArray.parent
                     end if
-                    
+
                     openArray = openArray - 1
-                    
+
                     mode = "next"
 
                 elseif char = "}" then
                     log("Close object</ul>")
-                    
+
                     ' If it's an open object, we close it and set the current object as it's parent
                     if isobject(currentObject.parent) then
                         if TypeName(currentObject.parent) = "JSONobject" then
                             set currentObject = currentObject.parent
-                        
+
                         ' If the parent is and array
                         elseif TypeName(currentObject.parent) = "JSONarray" then
                             set tmpObj = currentObject.parent
-                            
+
                             ' we search for the next parent object to set the current object
                             while isObject(tmpObj) and TypeName(tmpObj) = "JSONarray"
                                 set tmpObj = tmpObj.parent
                             wend
-                            
+
                             set currentObject = tmpObj
                         end if
                     else
                         currentObject = currentObject.parent
                     end if
-                    
+
                     openObject = openObject - 1
-                    
+
                     mode = "next"
                 end if
             end if
-            
+
             prevchar = char
         loop
-        
+
         set regex = nothing
-        
+
         Response.LCID = actualLCID
-        
+
         set parse = root
     end function
-    
+
     ' Add a new property (key-value pair)
     public sub add(byval prop, byval obj)
         dim p
         getProperty prop, p
-        
+
         if GetTypeName(p) = "JSONpair" then
             err.raise JSON_ERROR_PROPERTY_ALREADY_EXISTS, TypeName(me), "A property already exists with the name: " & prop & "."
         else
@@ -1091,7 +1040,7 @@ class JSONobject
                 set item2.parent = me
 
                 set item.value = item2
-                
+
             elseif itemType = "Field" then
                 item.value = obj.value
             elseif isObject(obj) and itemType <> "IStringList" then
@@ -1103,21 +1052,21 @@ class JSONobject
             ArrayPush i_properties, item
         end if
     end sub
-    
+
     ' Remove a property from the object (key-value pair)
     public sub remove(byval prop)
         dim p, i
         i = getProperty(prop, p)
-        
+
         ' property exists
         if i > -1 then ArraySlice i_properties, i
     end sub
-    
+
     ' Return the value of a property by its key
     public default function value(byval prop)
         dim p
         getProperty prop, p
-        
+
         if GetTypeName(p) = "JSONpair" then
             if isObject(p.value) then
                 set value = p.value
@@ -1128,21 +1077,21 @@ class JSONobject
             value = null
         end if
     end function
-    
+
     ' Change the value of a property
     ' Creates the property if it didn't exists
     public sub change(byval prop, byval obj)
         dim p
         getProperty prop, p
-        
+
         if GetTypeName(p) = "JSONpair" then
             if isArray(obj) then
                 set item = new JSONarray
                 item.items = obj
                 set item.parent = me
-                
+
                 p.value = item
-                
+
             elseif isObject(obj) then
                 set p.value = obj
             else
@@ -1152,99 +1101,99 @@ class JSONobject
             add prop, obj
         end if
     end sub
-    
+
     ' Returns the index of a property if it exists, else -1
     ' @param prop as string - the property name
     ' @param out outProp as variant - will be filled with the property value, nothing if not found
     private function getProperty(byval prop, byref outProp)
         dim i, p, found
         set outProp = nothing
-        found = false       
-        
+        found = false
+
         i = 0
 
         do while i <= ubound(i_properties)
             set p = i_properties(i)
-            
+
             if p.name = prop then
                 set outProp = p
                 found = true
-                
+
                 exit do
             end if
-            
+
             i = i + 1
         loop
-        
+
         if not found then i = -1
-        
+
         getProperty = i
     end function
-    
-    
+
+
     ' Serialize the current object to a JSON formatted string
     public function Serialize()
         dim actualLCID, out
         actualLCID = Response.LCID
         Response.LCID = 1033
-        
+
         out = serializeObject(me)
-        
+
         Response.LCID = actualLCID
-        
+
         Serialize = out
     end function
-    
+
     ' Writes the JSON serialized object to the response
     public sub write()
         response.write Serialize
     end sub
-    
-    
+
+
     ' Helpers
     ' Serializes a JSON object to JSON formatted string
     public function serializeObject(obj)
         dim out, prop, value, i, pairs, valueType
         out = "{"
-        
+
         pairs = obj.pairs
-        
+
         for i = 0 to ubound(pairs)
             set prop = pairs(i)
-            
+
             if out <> "{" then out = out & ","
-            
+
             if isobject(prop.value) then
                 set value = prop.value
             else
                 value = prop.value
             end if
-            
+
             if prop.name = JSON_ROOT_KEY then
                 out = out & """" & obj.defaultPropertyName & """:"
             else
                 out = out & """" & prop.name & """:"
             end if
-            
+
             if isArray(value) or GetTypeName(value) = "JSONarray" then
                 out = out & serializeArray(value)
-                
+
             elseif isObject(value) and GetTypeName(value) = "JSONscript" then
                 out = out & value.Serialize()
 
             elseif isObject(value) then
                 out = out & serializeObject(value)
-                
+
             else
                 out = out & serializeValue(value)
             end if
         next
-        
+
         out = out & "}"
-        
+
         serializeObject = out
     end function
-    
+
     ' Serializes a value to a valid JSON formatted string representing the value
     ' (quoted for strings, the type name for objects, null for nothing and null values)
     public function serializeValue(byval value)
@@ -1253,45 +1202,45 @@ class JSONobject
         select case lcase(GetTypeName(value))
             case "null"
                 out = "null"
-            
+
             case "nothing"
                 out = "undefined"
-            
+
             case "boolean"
                 if value then
                     out = "true"
                 else
                     out = "false"
                 end if
-            
+
             case "byte", "integer", "long", "single", "double", "currency", "decimal"
                 out = value
-            
+
             case "date"
                 out = """" & year(value) & "-" & padZero(month(value), 2) & "-" & padZero(day(value), 2) & "T" & padZero(hour(value), 2) & ":" & padZero(minute(value), 2) & ":" & padZero(second(value), 2) & """"
-            
+
             case "string", "char", "empty"
                 out = """" & EscapeCharacters(value) & """"
-            
+
             case else
                 out = """" & GetTypeName(value) & """"
         end select
-        
+
         serializeValue = out
     end function
-    
+
     ' Pads a numeric string with zeros at left
     private function padZero(byval number, byval length)
         dim result
         result = number
-        
+
         while len(result) < length
             result = "0" & result
         wend
-        
+
         padZero = result
     end function
-    
+
     ' Serializes an array item to JSON formatted string
     private function serializeArrayItem(byref elm)
         dim out, val
@@ -1299,13 +1248,13 @@ class JSONobject
         if isobject(elm) then
             if GetTypeName(elm) = "JSONobject" then
                 set val = elm
-            
+
             elseif GetTypeName(elm) = "JSONarray" then
                 val = elm.items
-                
+
             elseif isObject(elm.value) then
                 set val = elm.value
-                
+
             else
                 val = elm.value
             end if
@@ -1315,10 +1264,10 @@ class JSONobject
 
         if isArray(val) or GetTypeName(val) = "JSONarray" then
             out = out & serializeArray(val)
-            
+
         elseif isObject(val) then
             out = out & serializeObject(val)
-            
+
         else
             out = out & serializeValue(val)
         end if
@@ -1331,7 +1280,7 @@ class JSONobject
         dim i, j, k, dimensions, out, innerArray, elm, val
 
         out = "["
-        
+
         if isobject(arr) then
             log("Serializing jsonArray object")
             innerArray = arr.items
@@ -1341,7 +1290,7 @@ class JSONobject
         end if
 
         dimensions = NumDimensions(innerArray)
-        
+
         if dimensions > 1 then
             log("Multidimensional array")
             for j = 0 to ubound(innerArray, 1)
@@ -1349,9 +1298,9 @@ class JSONobject
 
                 for k = 0 to ubound(innerArray, 2)
                     if k > 0 then out = out & ","
-                    
+
                     if isObject(innerArray(j, k)) then
-                        set elm = innerArray(j, k)                          
+                        set elm = innerArray(j, k)
                     else
                         elm = innerArray(j, k)
                     end if
@@ -1360,136 +1309,136 @@ class JSONobject
                 next
 
                 out = out & "]"
-            next    
+            next
         else
             for j = 0 to ubound(innerArray)
                 if j > 0 then out = out & ","
-                
+
                 if isobject(innerArray(j)) then
                     set elm = innerArray(j)
                 else
                     elm = innerArray(j)
                 end if
-                                
+
                 out = out & serializeArrayItem(elm)
             next
         end if
 
         out = out & "]"
-        
+
         serializeArray = out
     end function
-    
-    
+
+
     ' Returns the number of dimensions an array has
     public Function NumDimensions(byref arr)
         Dim dimensions
         dimensions = 0
-        
+
         On Error Resume Next
-        
+
         Do While Err.number = 0
             dimensions = dimensions + 1
             UBound arr, dimensions
         Loop
         On Error Goto 0
-        
+
         NumDimensions = dimensions - 1
     End Function
-    
+
     ' Pushes (adds) a value to an array, expanding it
     public function ArrayPush(byref arr, byref value)
         redim preserve arr(ubound(arr) + 1)
-        
+
         if isobject(value) then
             set arr(ubound(arr)) = value
         else
             arr(ubound(arr)) = value
         end if
-        
+
         ArrayPush = arr
     end function
-    
+
     ' Removes a value from an array
     private function ArraySlice(byref arr, byref index)
         dim i, upperBound
         i = index
         upperBound = ubound(arr)
-        
+
         do while i < upperBound
             if isObject(arr(i)) then
                 set arr(i) = arr(i + 1)
             else
                 arr(i) = arr(i + 1)
             end if
-            
+
             i = i + 1
         loop
-        
+
         redim preserve arr(upperBound - 1)
-        
+
         ArraySlice = arr
     end function
-    
+
     ' Load properties from an ADO RecordSet object into an array
     ' @param rs as ADODB.RecordSet
     public sub LoadRecordSet(byref rs)
         dim arr, obj, field
-        
+
         set arr = new JSONArray
-        
+
         while not rs.eof
             set obj = new JSONobject
-        
+
             for each field in rs.fields
                 obj.Add field.name, field.value
             next
-            
+
             arr.Push obj
-            
+
             rs.movenext
         wend
-        
+
         set obj = nothing
-        
+
         add JSON_ROOT_KEY, arr
     end sub
-    
+
     ' Load properties from the first record of an ADO RecordSet object
     ' @param rs as ADODB.RecordSet
     public sub LoadFirstRecord(byref rs)
         dim field
-        
+
         for each field in rs.fields
             add field.name, field.value
         next
     end sub
-    
+
     ' Returns the value's type name (usefull for types not supported by VBS)
     public function GetTypeName(byval value)
         dim valueType
-    
+
         on error resume next
             valueType = TypeName(value)
-            
+
             if err.number <> 0 then
                 if varType(value) = 14 then valueType = "Decimal"
             end if
         on error goto 0
-        
+
         GetTypeName = valueType
     end function
-    
+
     ' Escapes special characters in the text
     ' @param text as String
     public function EscapeCharacters(byval text)
         dim result
-        
+
         result = text
-    
+
         if not isNull(text) then
             result = cstr(result)
-            
+
             result = replace(result, "\", "\\")
             result = replace(result, """", "\""")
             result = replace(result, vbcr, "\r")
@@ -1497,10 +1446,10 @@ class JSONobject
             result = replace(result, vbtab, "\t")
             result = replace(result, vbback, "\b")
         end if
-    
+
         EscapeCharacters = result
     end function
-    
+
     ' Used to write the log messages to the response on debug mode
     private sub log(byval msg)
         if i_debug then response.write "<li>" & msg & "</li>" & vbcrlf
@@ -1522,7 +1471,7 @@ class JSONarray
     public property get items
         items = i_items
     end property
-    
+
     public property let items(value)
         if isArray(value) then
             i_items = value
@@ -1530,28 +1479,28 @@ class JSONarray
             err.raise JSON_ERROR_NOT_AN_ARRAY, TypeName(me), "The value assigned is not an array."
         end if
     end property
-    
+
     ' The length of the array
     public property get length
         length = ubound(i_items) + 1
     end property
-    
+
     ' The depth of the array in the chain (starting with 1)
     public property get depth
         depth = i_depth
     end property
-    
+
     ' The parent object or array
     public property get parent
         set parent = i_parent
     end property
-    
+
     public property set parent(value)
         set i_parent = value
         i_depth = i_parent.depth + 1
         i_defaultPropertyName = i_parent.defaultPropertyName
     end property
-    
+
     ' Gets/sets the default property name generated when loading recordsets and arrays (default "data")
     public property get defaultPropertyName
         defaultPropertyName = i_defaultPropertyName
@@ -1561,8 +1510,8 @@ class JSONarray
         i_defaultPropertyName = value
     end property
 
-    
-    
+
+
     ' Constructor and destructor
     private sub class_initialize
         i_version = "2.3.5"
@@ -1570,23 +1519,23 @@ class JSONarray
         redim i_items(-1)
         i_depth = 0
     end sub
-    
+
     private sub class_terminate
         dim i, j, js, dimensions
-        
+
         dimensions = 0
-        
+
         On Error Resume Next
-        
+
         Do While Err.number = 0
             dimensions = dimensions + 1
             UBound i_items, dimensions
         Loop
-        
+
         On Error Goto 0
-        
+
         dimensions = dimensions - 1
-        
+
         for i = 1 to dimensions
             for j = 0 to ubound(i_items, i)
                 if dimensions = 1 then
@@ -1597,11 +1546,11 @@ class JSONarray
             next
         next
     end sub
-    
+
     ' Adds a value to the array
     public sub Push(byref value)
         dim js, instantiated
-        
+
         if typeName(i_parent) = "JSONobject" then
             set js = i_parent
             i_defaultPropertyName = i_parent.defaultPropertyName
@@ -1610,28 +1559,28 @@ class JSONarray
             js.defaultPropertyName = i_defaultPropertyName
             instantiated = true
         end if
-        
+
         js.ArrayPush i_items, value
-        
+
         if instantiated then set js = nothing
     end sub
-    
+
     ' Load properties from a ADO RecordSet object
     public sub LoadRecordSet(byref rs)
         dim obj, field
-        
+
         while not rs.eof
             set obj = new JSONobject
-        
+
             for each field in rs.fields
                 obj.Add field.name, field.value
             next
-            
+
             Push obj
-            
+
             rs.movenext
         wend
-        
+
         set obj = nothing
     end sub
 
@@ -1640,7 +1589,7 @@ class JSONarray
     public default function ItemAt(byval index)
         dim len
         len = me.length
-        
+
         if len > 0 and index < len then
             if isObject(i_items(index)) then
                 set ItemAt = i_items(index)
@@ -1651,37 +1600,37 @@ class JSONarray
             err.raise JSON_ERROR_INDEX_OUT_OF_BOUNDS, TypeName(me), "Index out of bounds."
         end if
     end function
-    
+
     ' Serializes this JSONarray object in JSON formatted string value
     ' (uses the JSONobject.SerializeArray method)
     public function Serialize()
         dim js, out, instantiated, actualLCID
-        
+
         actualLCID = Response.LCID
         Response.LCID = 1033
-        
+
         if not isEmpty(i_parent) then
             if TypeName(i_parent) = "JSONobject" then
                 set js = i_parent
                 i_defaultPropertyName = i_parent.defaultPropertyName
             end if
         end if
-        
+
         if isEmpty(js) then
             set js = new JSONobject
             js.defaultPropertyName = i_defaultPropertyName
             instantiated = true
         end if
-        
+
         out = js.SerializeArray(me)
-        
+
         if instantiated then set js = nothing
-        
+
         Response.LCID = actualLCID
-        
+
         Serialize = out
     end function
-    
+
     ' Writes the serialized array to the response
     public function Write()
         Response.Write Serialize()
@@ -1697,29 +1646,29 @@ class JSONscript
     public property get value
         value = s_value
     end property
-    
+
     public property let value(newValue)
         if (TypeName(newValue) <> "String") then
             err.raise JSON_ERROR_NOT_A_STRING, TypeName(me), "The value assigned is not a string."
         end if
-    
+
         if (len(newValue) = 0) then newValue = s_nullString
         s_value = newValue
     end property
-    
+
     ' Constructor and destructor
     private sub class_initialize()
         i_version = "1.0.0"
-        
+
         s_nullString = "null"
         s_value = s_nullString
     end sub
-    
+
     ' Serializes this object by outputting the raw value
     public function Serialize()
         Serialize = s_value
     end function
-    
+
     ' Writes the serialized object to the response
     public function Write()
         Response.Write Serialize()
@@ -1732,16 +1681,16 @@ end class
 class JSONpair
     dim i_name, i_value
     dim i_parent
-    
+
     ' The name or key of the pair
     public property get name
         name = i_name
     end property
-    
+
     public property let name(val)
         i_name = val
     end property
-    
+
     ' The value of the pair
     public property get value
         if isObject(i_value) then
@@ -1750,29 +1699,29 @@ class JSONpair
             value = i_value
         end if
     end property
-    
+
     public property let value(val)
         i_value = val
     end property
-    
+
     public property set value(val)
         set i_value = val
     end property
-    
+
     ' The parent object
     public property get parent
         set parent = i_parent
     end property
-    
+
     public property set parent(val)
         set i_parent = val
     end property
-    
-    
+
+
     ' Constructor and destructor
     private sub class_initialize
     end sub
-    
+
     private sub class_terminate
         if isObject(value) then set value = nothing
     end sub
@@ -1780,19 +1729,9 @@ end class
 %>
 ```
 
-
-
-
-
-
-
-
-
-------
+---
 
 ### aspJSON.asp
-
-
 
 ```asp
 <%
@@ -1820,7 +1759,7 @@ Class aspJSON
     Public Sub loadJSON(inputsource)
         inputsource = aj_MultilineTrim(inputsource)
         If Len(inputsource) = 0 Then Err.Raise 1, "loadJSON Error", "No data to load."
-        
+
         select case Left(inputsource, 1)
             case "{", "["
             case else
@@ -1971,7 +1910,7 @@ Class aspJSON
             Select Case TypeName(objDict.Item(aj_item))
                 Case "Dictionary"
                     GetDict = GetDict & Space(JSONoutput_level * 4)
-                    
+
                     aj_dicttype = "[]"
                     For Each aj_label In objDict.Item(aj_item).Keys
                          If Not aj_IsInt(aj_label) Then aj_dicttype = "{}"
@@ -1982,7 +1921,7 @@ Class aspJSON
                         GetDict = GetDict & ("""" & aj_JSONEncode(aj_item) & """" & ": " & Left(aj_dicttype,1) & Chr(13) & Chr(10))
                     End If
                     JSONoutput_level = JSONoutput_level + 1
-                    
+
                     aj_keyvals = objDict.Keys
                     GetDict = GetDict & (GetSubDict(objDict.Item(aj_item)) & Space(JSONoutput_level * 4) & Right(aj_dicttype,1) & aj_InlineIf(aj_item = aj_keyvals(objDict.Count - 1),"" , ",") & Chr(13) & Chr(10))
                 Case Else

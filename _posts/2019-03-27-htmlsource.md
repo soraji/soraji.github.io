@@ -1,15 +1,13 @@
 ---
 layout: post
-title:  "[java]java에서 html소스 불러오기"
+title: "[ Java ]java에서 html소스 불러오기"
 categories: back
 comments: true
-
-
 ---
 
 java에서 HTML 소스 불러오기
 
-~~~java
+```java
 String urlPath = "http://www.example.com";
 String pageContents = "";
 StringBuilder contents = new StringBuilder();
@@ -23,7 +21,7 @@ try{
     BufferedReader buff = new BufferedReader(reader);
 
     while((pageContents = buff.readLine())!=null){
-        //System.out.println(pageContents);             
+        //System.out.println(pageContents);
         contents.append(pageContents);
         contents.append("\r\n");
     }
@@ -35,5 +33,4 @@ try{
 }catch(Exception e){
     e.printStackTrace();
 }
-~~~
-
+```
