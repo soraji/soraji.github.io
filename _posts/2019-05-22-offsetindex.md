@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[ Python ]파이썬 오프셋 인덱스"
+title: "[ Python ] 파이썬 오프셋 인덱스"
 categories: back
 comments: true
 ---
