@@ -1,15 +1,13 @@
 ---
 layout: post
-title:  "Error response from daemon: denied: access forbidden"
-subtitle:   ""
+title: 'Error response from daemon: denied: access forbidden'
+subtitle: ''
 categories: error
 comments: true
 ---
 
-
-
 <br>
-
+   
 <br>
 
 저번주까지 docker-compose up 잘되다가 같이 일하시는 데브옵스 개발자분이 설정을 뭔가 바꾸신건지
@@ -34,9 +32,9 @@ comments: true
 
 그걸 docker login으로 처리해줄 수 있다.
 
-~~~
+```
 docker login registry.gitlab.com/v2/접근하려는레포경로
-~~~
+```
 
 <br>
 
@@ -58,4 +56,4 @@ password는 로그인할때 쓰는 비밀번호가 아니라 엑세스 토큰을
 
 <br>
 
-*참조 : https://inkyu-yoon.github.io/docs/Learned/Error/AccessDeniedError*
+_참조 : https://inkyu-yoon.github.io/docs/Learned/Error/AccessDeniedError_
