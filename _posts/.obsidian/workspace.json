@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023-10-16-infcon.md",
+                "file": "2023-05-06-resume.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2023-10-16-infcon.md",
+                "file": "2023-05-06-resume.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2023-10-16-infcon.md",
+                "file": "2023-05-06-resume.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2023-10-16-infcon.md"
+                "file": "2023-05-06-resume.md"
               }
             }
           }
@@ -148,8 +148,10 @@
   },
   "active": "e910d92d48210bf8",
   "lastOpenFiles": [
-    "2023-05-06-resume.md",
+    "2019-09-25-classASPjson.md",
+    "2023-10-17-diary.md",
     "2023-10-16-infcon.md",
+    "2023-05-06-resume.md",
     "2023-07-19-vuestop.md"
   ]
 }
