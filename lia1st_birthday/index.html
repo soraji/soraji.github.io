@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>리아의 첫 생일 초대장</title>
 
 <!-- Open Graph / KakaoTalk, iMessage, etc. link preview -->
@@ -10,13 +10,13 @@
 <meta property="og:url" content="https://soraji.github.io/lia1st_birthday/">
 <meta property="og:title" content="리아의 첫 생일에 초대합니다">
 <meta property="og:description" content="2026.07.25 (토) 오전 11시 · 하늘선 한정식">
-<meta property="og:image" content="https://soraji.github.io/lia1st_birthday/images/IMG_5992.jpeg">
+<meta property="og:image" content="https://soraji.github.io/lia1st_birthday/images/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="리아의 첫 생일에 초대합니다">
 <meta name="twitter:description" content="2026.07.25 (토) 오전 11시 · 하늘선 한정식">
-<meta name="twitter:image" content="https://soraji.github.io/lia1st_birthday/images/IMG_5992.jpeg">
+<meta name="twitter:image" content="https://soraji.github.io/lia1st_birthday/images/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -85,6 +85,7 @@
   .hero{
     position:relative;
     height:100vh;
+    height:100svh;
     min-height:640px;
     max-height:860px;
     overflow:hidden;
@@ -94,7 +95,6 @@
     position:absolute; inset:0;
     width:100%; height:100%;
     object-fit:cover;
-    transform:scale(1.08);
     filter:saturate(0.96) brightness(0.98);
   }
   .hero-veil{
@@ -113,7 +113,7 @@
     height:100%;
     display:flex;
     flex-direction:column;
-    justify-content:space-between;
+    justify-content:flex-start;
     padding:48px 34px 44px;
     text-align:center;
   }
@@ -132,6 +132,7 @@
     flex-direction:column;
     align-items:center;
     gap:14px;
+    margin-top:36px;
   }
   .hero-title{
     font-size:34px;
@@ -147,6 +148,7 @@
     font-weight:300;
   }
   .hero-bottom{
+    margin-top:auto;
     font-size:12px;
     letter-spacing:0.2em;
     color:#F0E2C4;
@@ -554,11 +556,6 @@
 
   <!-- GREETING -->
   <section class="section greeting fade-up">
-    <svg class="mark" viewBox="0 0 48 48" fill="none">
-      <circle cx="24" cy="24" r="22" stroke="#B8873A" stroke-width="1"/>
-      <path d="M24 14c-4 4-4 8 0 12 4-4 4-8 0-12z" fill="#A23B2E"/>
-      <path d="M16 26c3-3 6-3 8 0 2-3 5-3 8 0" stroke="#5B6B4D" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-    </svg>
     <span class="eyebrow">인사말</span>
     <h2 class="serif">한 뼘 더 자란 리아의<br>첫 생일을 함께해 주세요</h2>
     <p>
@@ -575,7 +572,7 @@
   <!-- COUNTDOWN -->
   <section class="countdown fade-up">
     <span class="eyebrow">D-DAY</span>
-    <h3 class="serif">우리 리아의 첫돌까지</h3>
+    <h3 class="serif">리아가 태어난 바로 그 순간까지</h3>
     <div class="cd-grid">
       <div class="cd-box">
         <div class="cd-num" id="cd-d">00</div>
@@ -594,7 +591,7 @@
         <div class="cd-label">SEC</div>
       </div>
     </div>
-    <div class="cd-note">2026년 7월 29일 오후 5시 5분 · 리아가 태어난 바로 그 순간</div>
+    <div class="cd-note">2026년 7월 29일 오후 5시 5분</div>
   </section>
 
   <!-- INFO -->
