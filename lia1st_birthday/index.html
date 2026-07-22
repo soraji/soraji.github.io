@@ -399,6 +399,48 @@
     font-weight:300;
     margin:0 0 32px;
   }
+
+  /* ---------- notice (blessing card) ---------- */
+  .notice{
+    background:var(--paper-deep);
+    text-align:center;
+  }
+  .notice .eyebrow{ display:block; margin-bottom:18px; }
+  .notice h2{
+    font-size:21px;
+    line-height:1.5;
+    font-weight:700;
+    margin:0 0 20px;
+    color:var(--ink);
+  }
+  .notice p{
+    font-size:14px;
+    line-height:1.95;
+    color:var(--ink-soft);
+    font-weight:300;
+    margin:0 0 30px;
+    word-break:keep-all;
+  }
+  .notice-card-frame{
+    display:inline-block;
+    padding:12px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:4px;
+    box-shadow:var(--shadow);
+  }
+  .notice-card-frame img{
+    display:block;
+    width:180px;
+    height:auto;
+    border-radius:2px;
+  }
+  .notice .caption{
+    margin-top:14px;
+    font-size:12px;
+    color:var(--gold);
+    letter-spacing:0.04em;
+  }
   .g-grid{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
@@ -556,17 +598,16 @@
 
   <!-- GREETING -->
   <section class="section greeting fade-up">
-    <span class="eyebrow">인사말</span>
     <h2 class="serif">한 뼘 더 자란 리아의<br>첫 생일을 함께해 주세요</h2>
     <p>
       아장아장 걸음마를 떼고, 방긋 웃는 얼굴이 하루가 다르게 자라나는 요즘이에요.<br><br>
-      리아가 세상에 온 지 어느덧 한 해가 되었습니다.<br>
+      리아가 지구별에 도착한지 어느덧 한 해가 되었습니다.<br>
       소중한 분들을 모시고 작지만 따뜻한 자리에서<br>
       리아의 첫 생일을 함께 축하하고 싶어요.<br><br>
       바쁘신 걸음이겠지만 오셔서 자리를 빛내주시면<br>
       더없이 큰 기쁨이 되겠습니다.
     </p>
-    <div class="signoff">— 리아 가족 올림 —</div>
+    <div class="signoff">— 리아 아빠 엄마 올림 —</div>
   </section>
 
   <!-- COUNTDOWN -->
@@ -659,6 +700,23 @@
     </div>
   </section>
 
+  <!-- NOTICE: blessing card heads-up -->
+  <section class="section notice fade-up">
+    <span class="eyebrow">NOTICE</span>
+    <h2 class="serif">리아에게 지혜를 나눠주세요</h2>
+    <p>
+      이번주 토요일, 리아를 위한 덕담 카드를 함께 작성하는<br>
+      시간을 가지려고 해요.<br><br>
+      준비한 덕담카드에 짧은 한마디씩 남겨주시면, 어른들의 현명한 가르침이 20년 뒤 리아가 살아갈 삶의 이정표가 되어줄 것 같아요.<br><br>
+      미리 어떤 말을 남겨주실지 생각해 와주시면<br>
+      더욱 좋을 것 같습니다 :)
+    </p>
+    <div class="notice-card-frame">
+      <img src="images/blessing-card.png" alt="덕담 카드 예시">
+    </div>
+    <div class="caption">덕담 카드 예시</div>
+  </section>
+
   <!-- CLOSING -->
   <section class="closing fade-up">
     <img class="closing-img" src="images/IMG_1489.jpeg" alt="리아 가족">
@@ -671,7 +729,6 @@
         리아가 건강하고 밝게 자랄 수 있도록<br>
         앞으로도 많은 사랑과 응원 부탁드려요.
       </p>
-      <div class="signoff serif">리아, 첫돌을 축하해 🌸</div>
     </div>
   </section>
 
@@ -746,7 +803,15 @@
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxCount = document.getElementById('lightboxCount');
   const gridImgs = Array.from(document.querySelectorAll('#gGrid img'));
-  const fullSrcs = gridImgs.map(img => img.dataset.full);
+
+  // full photo set for fullscreen browsing (grid shows a curated 3x3 preview only)
+  const allPhotoNames = [
+    'IMG_5992','IMG_2656','IMG_2807','IMG_5663','IMG_6386','IMG_8173','IMG_9680','IMG_1200','IMG_9888',
+    'IMG_0017','IMG_0331','IMG_1489','IMG_2010','IMG_2294','IMG_2454','IMG_2670','IMG_2744','IMG_3067',
+    'IMG_3239','IMG_3418','IMG_3920','IMG_5307','IMG_5318','IMG_5429','IMG_5555','IMG_6017','IMG_8381',
+    'IMG_8902','IMG_9527','IMG_9861'
+  ];
+  const fullSrcs = allPhotoNames.map(name => 'images/' + name + '.jpeg');
   let currentIndex = 0;
 
   function showImage(i){
@@ -758,7 +823,10 @@
   document.getElementById('gGrid').addEventListener('click', (e)=>{
     const img = e.target.closest('img');
     if(!img) return;
-    const idx = gridImgs.indexOf(img);
+    // find this thumbnail's position within the full photo set, not just the 9-grid
+    const fullPath = img.dataset.full;
+    let idx = fullSrcs.indexOf(fullPath);
+    if(idx === -1) idx = 0;
     showImage(idx);
     lightbox.classList.add('open');
   });
