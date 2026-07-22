@@ -428,6 +428,7 @@
     border:1px solid var(--line);
     border-radius:4px;
     box-shadow:var(--shadow);
+    cursor:pointer;
   }
   .notice-card-frame img{
     display:block;
@@ -508,6 +509,8 @@
   }
   .lightbox-nav.prev{ left:14px; }
   .lightbox-nav.next{ right:14px; }
+  .lightbox.single .lightbox-nav,
+  .lightbox.single .lightbox-count{ display:none; }
   .lightbox-count{
     position:absolute;
     bottom:22px; left:0; right:0;
@@ -705,16 +708,16 @@
     <span class="eyebrow">NOTICE</span>
     <h2 class="serif">리아에게 지혜를 나눠주세요</h2>
     <p>
-      이번주 토요일, 리아를 위한 덕담 카드를 함께 작성하는<br>
-      시간을 가지려고 해요.<br><br>
+      이번주 토요일, 리아를 위한<br>
+      덕담 카드 작성 시간을 가지려고 해요.<br><br>
       준비한 덕담카드에 짧은 한마디씩 남겨주시면, 어른들의 현명한 가르침이 20년 뒤 리아가 살아갈 삶의 이정표가 되어줄 것 같아요.<br><br>
       미리 어떤 말을 남겨주실지 생각해 와주시면<br>
       더욱 좋을 것 같습니다 :)
     </p>
-    <div class="notice-card-frame">
+    <div class="notice-card-frame" id="blessingCard">
       <img src="images/blessing-card.png" alt="덕담 카드 예시">
     </div>
-    <div class="caption">덕담 카드 예시</div>
+    <div class="caption">카드는 토요일에 드릴게요</div>
   </section>
 
   <!-- CLOSING -->
@@ -831,15 +834,24 @@
     lightbox.classList.add('open');
   });
 
-  function closeLightbox(){ lightbox.classList.remove('open'); lightboxImg.src=''; }
+  function closeLightbox(){ lightbox.classList.remove('open'); lightbox.classList.remove('single'); lightboxImg.src=''; }
   document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
   document.getElementById('lightboxPrev').addEventListener('click', (e)=>{ e.stopPropagation(); showImage(currentIndex - 1); });
   document.getElementById('lightboxNext').addEventListener('click', (e)=>{ e.stopPropagation(); showImage(currentIndex + 1); });
   lightbox.addEventListener('click', (e)=>{ if(e.target === lightbox) closeLightbox(); });
 
+  // blessing card: opens fullscreen on its own, no prev/next since it's not part of the photo set
+  document.getElementById('blessingCard').addEventListener('click', ()=>{
+    lightboxImg.src = 'images/blessing-card.png';
+    lightboxCount.textContent = '';
+    lightbox.classList.add('open');
+    lightbox.classList.add('single');
+  });
+
   document.addEventListener('keydown', (e)=>{
     if(!lightbox.classList.contains('open')) return;
     if(e.key === 'Escape') closeLightbox();
+    if(lightbox.classList.contains('single')) return;
     if(e.key === 'ArrowLeft') showImage(currentIndex - 1);
     if(e.key === 'ArrowRight') showImage(currentIndex + 1);
   });
@@ -848,6 +860,7 @@
   let touchStartX = 0;
   lightbox.addEventListener('touchstart', (e)=>{ touchStartX = e.changedTouches[0].screenX; });
   lightbox.addEventListener('touchend', (e)=>{
+    if(lightbox.classList.contains('single')) return;
     const dx = e.changedTouches[0].screenX - touchStartX;
     if(Math.abs(dx) > 40){
       dx > 0 ? showImage(currentIndex - 1) : showImage(currentIndex + 1);
